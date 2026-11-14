@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mavibağ Butik Otel | Muğla'da Taş Ev Konaklama</title>
+  <meta name="description" content="Mavibağ Butik Otel: Muğla'da restore edilmiş taş evde 5 odalı butik konaklama. Kahvaltı dahil, denize yürüme mesafesi. Direkt rezervasyonda %10 indirim.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#464832">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mavibağ Butik Otel | Muğla'da Taş Ev Konaklama">
+  <meta property="og:description" content="Muğla'da restore edilmiş taş evde 5 odalı butik konaklama. Kahvaltı dahil, denize yürüme mesafesi.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1737400604966-95536db9c01b?auto=format&fit=crop&w=1200&h=630&q=80">
+  <meta name="twitter:card" content="summary_large_image">
+  <style>
+    details summary::-webkit-details-marker { display: none; }
+    details[open] .faq-icon { transform: rotate(45deg); }
+    .img-box { background: #d9d2c4; }
+  </style>
+</head>
+<body class="font-sans bg-white text-olive-900 antialiased">
+
+  <!-- ÜST MENÜ -->
+  <header id="header" class="fixed inset-x-0 top-0 z-40 text-white transition-colors duration-300">
+    <nav class="max-w-6xl mx-auto px-5 h-20 flex items-center justify-between">
+      <a href="#" class="leading-none">
+        <span class="block font-serif text-[28px] font-semibold tracking-wide">Mavibağ</span>
+        <span class="block text-[10px] tracking-[0.3em] mt-1 opacity-80">BUTİK OTEL · MUĞLA</span>
+      </a>
+      <ul class="hidden lg:flex gap-9 text-sm font-medium">
+        <li><a href="#otel" class="opacity-90 hover:opacity-100">Otel</a></li>
+        <li><a href="#odalar" class="opacity-90 hover:opacity-100">Odalar</a></li>
+        <li><a href="#kahvalti" class="opacity-90 hover:opacity-100">Kahvaltı</a></li>
+        <li><a href="#konum" class="opacity-90 hover:opacity-100">Konum</a></li>
+        <li><a href="#sss" class="opacity-90 hover:opacity-100">SSS</a></li>
+      </ul>
+      <a href="#rezervasyon" id="navCta" class="hidden lg:inline-block border border-white/70 hover:bg-white hover:text-olive-900 text-sm font-semibold px-5 py-2.5 rounded-md transition">Rezervasyon</a>
+      <button id="menuBtn" class="lg:hidden p-2" aria-label="Menüyü aç">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </nav>
+    <div id="mobileMenu" class="hidden lg:hidden bg-white text-olive-900 px-5 pb-5">
+      <a href="#otel" class="block py-3 border-b border-stone-200">Otel</a>
+      <a href="#odalar" class="block py-3 border-b border-stone-200">Odalar</a>
+      <a href="#kahvalti" class="block py-3 border-b border-stone-200">Kahvaltı</a>
+      <a href="#konum" class="block py-3 border-b border-stone-200">Konum</a>
+      <a href="#sss" class="block py-3 border-b border-stone-200">SSS</a>
+      <a href="#rezervasyon" class="mt-4 block text-center bg-olive-700 text-white font-semibold py-3 rounded-md">Rezervasyon</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="relative h-[88vh] min-h-[560px] img-box">
+    <img src="https://images.unsplash.com/photo-1737400604966-95536db9c01b?auto=format&fit=crop&w=2000&q=80" alt="Mavi panjurlu taş ev" class="absolute inset-0 w-full h-full object-cover">
+    <div class="absolute inset-0 bg-gradient-to-b from-black/45 via-black/20 to-black/55"></div>
+    <div class="relative h-full max-w-6xl mx-auto px-5 flex flex-col justify-end pb-36 md:pb-40 text-white">
+      <h1 class="font-serif text-5xl md:text-7xl font-semibold leading-[1.02] max-w-3xl">Muğla'da, yüz yıllık bir taş evde sakin bir konaklama</h1>
+      <p class="mt-5 text-lg text-white/90 max-w-xl">Beş oda, bahçeden gelen kahvaltı ve denize beş dakikalık yürüyüş.</p>
+    </div>
+  </section>
+
+  <!-- HIZLI REZERVASYON ÇUBUĞU -->
+  <section class="relative z-10 px-5 -mt-20">
+    <form id="hizliForm" class="max-w-5xl mx-auto bg-white rounded-xl shadow-[0_12px_40px_-12px_rgba(0,0,0,.25)] p-5 md:p-6 grid grid-cols-2 md:grid-cols-4 gap-4 items-end">
+      <label class="block"><span class="text-[11px] font-semibold uppercase tracking-wider text-olive-500">Giriş</span>
+        <input type="date" name="giris" class="mt-1.5 w-full border-b border-stone-300 py-2 focus:outline-none focus:border-olive-600 bg-transparent"></label>
+      <label class="block"><span class="text-[11px] font-semibold uppercase tracking-wider text-olive-500">Çıkış</span>
+        <input type="date" name="cikis" class="mt-1.5 w-full border-b border-stone-300 py-2 focus:outline-none focus:border-olive-600 bg-transparent"></label>
+      <label class="block"><span class="text-[11px] font-semibold uppercase tracking-wider text-olive-500">Misafir</span>
+        <select name="kisi" class="mt-1.5 w-full border-b border-stone-300 py-2 focus:outline-none focus:border-olive-600 bg-transparent"><option value="1">1 yetişkin</option><option value="2" selected>2 yetişkin</option><option value="3">3 yetişkin</option></select></label>
+      <button class="bg-olive-700 hover:bg-olive-800 text-white font-semibold py-3.5 rounded-md transition">Müsaitlik Sor</button>
+    </form>
+  </section>
+
+  <!-- OTEL -->
+  <section id="otel" class="py-24">
+    <div class="max-w-6xl mx-auto px-5 grid md:grid-cols-2 gap-14 items-center">
+      <div>
+        <h2 class="font-serif text-4xl md:text-5xl font-semibold leading-tight">Küçük bir otel, ev sıcaklığında bir karşılama</h2>
+        <p class="mt-6 text-olive-700 leading-relaxed">Mavibağ, 1920'lerden kalma bir taş evin aslına uygun restorasyonuyla 2019'da kapılarını açtı. Yalnızca beş odamız olduğu için her misafirimizi tanıyor, konaklamanızı ihtiyaçlarınıza göre düzenliyoruz.</p>
+        <p class="mt-4 text-olive-700 leading-relaxed">Avlumuzda zeytin ve mandalina ağaçlarının gölgesinde dinlenebilir, sabahları bahçeden toplanan ürünlerle hazırlanan kahvaltının tadını çıkarabilirsiniz.</p>
+        <dl class="mt-10 grid grid-cols-3 border-t border-stone-200 pt-6 text-sm">
+          <div><dt class="text-olive-500">Oda</dt><dd class="mt-1 font-serif text-3xl font-semibold">5</dd></div>
+          <div><dt class="text-olive-500">Denize</dt><dd class="mt-1 font-serif text-3xl font-semibold">400 m</dd></div>
+          <div><dt class="text-olive-500">Havalimanı</dt><dd class="mt-1 font-serif text-3xl font-semibold">35 dk</dd></div>
+        </dl>
+      </div>
+      <div class="img-box rounded-lg overflow-hidden aspect-[4/5]">
+        <img src="https://images.unsplash.com/photo-1786966485314-47d35985e5d3?auto=format&fit=crop&w=1200&q=80" alt="Otel avlusunda oturma alanı" class="w-full h-full object-cover" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- ODALAR -->
+  <section id="odalar" class="py-24 bg-stone-100">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <h2 class="font-serif text-4xl md:text-5xl font-semibold">Odalar</h2>
+        <p class="max-w-md text-sm text-olive-600">Fiyatlar iki kişilik, gecelik ve kahvaltı dahildir. Sezona göre değişebilir; güncel fiyat için müsaitlik sorun.</p>
+      </div>
+      <div class="mt-12 grid md:grid-cols-3 gap-8">
+        <article>
+          <div class="img-box rounded-lg overflow-hidden aspect-[4/3]"><img src="https://images.unsplash.com/photo-1776763255122-3d35e32aee64?auto=format&fit=crop&w=1000&q=80" alt="Bahçe Odası" class="w-full h-full object-cover" loading="lazy"></div>
+          <div class="mt-5 flex justify-between items-baseline gap-4"><h3 class="font-serif text-2xl font-semibold">Bahçe Odası</h3><p class="text-sm whitespace-nowrap"><span class="font-semibold text-base">₺3.200</span> / gece</p></div>
+          <p class="mt-2 text-sm text-olive-700 leading-relaxed">Zemin katta, avluya açılan özel terasıyla.</p>
+          <ul class="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-xs text-olive-500"><li>22 m²</li><li>Çift kişilik yatak</li><li>Teras</li><li>Klima</li></ul>
+        </article>
+        <article>
+          <div class="img-box rounded-lg overflow-hidden aspect-[4/3]"><img src="https://images.unsplash.com/photo-1790419683322-b08a7050c424?auto=format&fit=crop&w=1000&q=80" alt="Taş Oda" class="w-full h-full object-cover" loading="lazy"></div>
+          <div class="mt-5 flex justify-between items-baseline gap-4"><h3 class="font-serif text-2xl font-semibold">Taş Oda</h3><p class="text-sm whitespace-nowrap"><span class="font-semibold text-base">₺3.800</span> / gece</p></div>
+          <p class="mt-2 text-sm text-olive-700 leading-relaxed">Orijinal taş duvarları ve şöminesiyle evin en eski odası.</p>
+          <ul class="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-xs text-olive-500"><li>26 m²</li><li>Çift kişilik yatak</li><li>Şömine</li><li>Klima</li></ul>
+        </article>
+        <article>
+          <div class="img-box rounded-lg overflow-hidden aspect-[4/3]"><img src="https://images.unsplash.com/photo-1667125095636-dce94dcbdd96?auto=format&fit=crop&w=1000&q=80" alt="Çatı Süiti" class="w-full h-full object-cover" loading="lazy"></div>
+          <div class="mt-5 flex justify-between items-baseline gap-4"><h3 class="font-serif text-2xl font-semibold">Çatı Süiti</h3><p class="text-sm whitespace-nowrap"><span class="font-semibold text-base">₺5.400</span> / gece</p></div>
+          <p class="mt-2 text-sm text-olive-700 leading-relaxed">Üst katta, deniz manzaralı geniş terası ve oturma alanıyla.</p>
+          <ul class="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-xs text-olive-500"><li>40 m²</li><li>King yatak</li><li>Manzaralı teras</li><li>Küvet</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- KAHVALTI -->
+  <section id="kahvalti" class="py-24">
+    <div class="max-w-6xl mx-auto px-5 grid md:grid-cols-2 gap-14 items-center">
+      <div class="img-box rounded-lg overflow-hidden aspect-[4/3] md:order-2">
+        <img src="https://images.unsplash.com/photo-1633040243823-6bf8d4edb0ec?auto=format&fit=crop&w=1200&q=80" alt="Serpme kahvaltı" class="w-full h-full object-cover" loading="lazy">
+      </div>
+      <div>
+        <h2 class="font-serif text-4xl md:text-5xl font-semibold leading-tight">Avluda serpme kahvaltı</h2>
+        <p class="mt-6 text-olive-700 leading-relaxed">Her sabah 08:30–11:00 arasında avluda serpme kahvaltı servis ediyoruz. Zeytinyağımız kendi ağaçlarımızdan, reçeller ve peynirler komşu köylerdeki üreticilerden geliyor.</p>
+        <ul class="mt-8 space-y-3 text-sm text-olive-800">
+          <li class="flex gap-3"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-olive-500 shrink-0"></span>Kahvaltı tüm oda fiyatlarına dahildir</li>
+          <li class="flex gap-3"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-olive-500 shrink-0"></span>Vejetaryen ve glutensiz seçenekler önceden bildirilmesi hâlinde hazırlanır</li>
+          <li class="flex gap-3"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-olive-500 shrink-0"></span>İstek üzerine akşam yemeği (rezervasyonla)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- REZERVASYON -->
+  <section id="rezervasyon" class="py-24 bg-olive-800 text-white">
+    <div class="max-w-6xl mx-auto px-5 grid lg:grid-cols-5 gap-12">
+      <div class="lg:col-span-2">
+        <h2 class="font-serif text-4xl md:text-5xl font-semibold leading-tight">Rezervasyon talebi</h2>
+        <p class="mt-5 text-white/75 leading-relaxed">Talebiniz WhatsApp üzerinden doğrudan resepsiyonumuza iletilir; müsaitlik ve ödeme bilgisiyle size dönüş yaparız.</p>
+        <ul class="mt-8 space-y-3 text-sm text-white/90">
+          <li>— Direkt rezervasyonda %10 indirim</li>
+          <li>— Girişten 7 gün öncesine kadar ücretsiz iptal</li>
+          <li>— Kahvaltı ve otopark dahil</li>
+        </ul>
+      </div>
+      <form id="rezForm" class="lg:col-span-3 bg-white text-olive-900 rounded-xl p-6 md:p-8 grid sm:grid-cols-2 gap-5" novalidate>
+        <label class="block"><span class="text-sm font-medium">Giriş tarihi</span>
+          <input type="date" name="giris" required class="mt-1.5 w-full rounded-md border border-stone-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-olive-400"></label>
+        <label class="block"><span class="text-sm font-medium">Çıkış tarihi</span>
+          <input type="date" name="cikis" required class="mt-1.5 w-full rounded-md border border-stone-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-olive-400"></label>
+        <label class="block"><span class="text-sm font-medium">Oda</span>
+          <select name="oda" class="mt-1.5 w-full rounded-md border border-stone-300 px-4 py-3 bg-white focus:outline-none focus:ring-2 focus:ring-olive-400">
+            <option value="3200">Bahçe Odası</option><option value="3800">Taş Oda</option><option value="5400">Çatı Süiti</option>
+          </select></label>
+        <label class="block"><span class="text-sm font-medium">Misafir</span>
+          <select name="kisi" class="mt-1.5 w-full rounded-md border border-stone-300 px-4 py-3 bg-white focus:outline-none focus:ring-2 focus:ring-olive-400">
+            <option value="1">1 yetişkin</option><option value="2" selected>2 yetişkin</option><option value="3">3 yetişkin</option>
+          </select></label>
+        <label class="block"><span class="text-sm font-medium">Ad Soyad</span>
+          <input name="ad" required class="mt-1.5 w-full rounded-md border border-stone-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-olive-400" placeholder="Adınız Soyadınız"></label>
+        <label class="block"><span class="text-sm font-medium">Telefon</span>
+          <input name="tel" type="tel" required class="mt-1.5 w-full rounded-md border border-stone-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-olive-400" placeholder="05XX XXX XX XX"></label>
+        <div class="sm:col-span-2 rounded-md bg-stone-100 px-5 py-4 flex justify-between items-center gap-4">
+          <p id="ozet" class="text-sm text-olive-600">Tarih seçtiğinizde tahmini tutar burada görünür.</p>
+          <p id="toplam" class="font-serif text-3xl font-semibold whitespace-nowrap"></p>
+        </div>
+        <p id="rezHata" class="sm:col-span-2 hidden text-sm text-red-600"></p>
+        <button class="sm:col-span-2 bg-olive-700 hover:bg-olive-800 text-white font-semibold py-3.5 rounded-md transition">WhatsApp ile Talep Gönder</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- KONUM -->
+  <section id="konum" class="py-24">
+    <div class="max-w-6xl mx-auto px-5 grid md:grid-cols-2 gap-14 items-center">
+      <div>
+        <h2 class="font-serif text-4xl md:text-5xl font-semibold leading-tight">Konum ve ulaşım</h2>
+        <p class="mt-5 text-olive-700">Örnek Köyü, Mavi Sokak No:7, Muğla</p>
+        <table class="mt-8 w-full text-sm">
+          <tbody class="divide-y divide-stone-200 border-y border-stone-200">
+            <tr><td class="py-3">Plaj</td><td class="py-3 text-right font-medium">5 dk yürüyüş</td></tr>
+            <tr><td class="py-3">Köy meydanı ve restoranlar</td><td class="py-3 text-right font-medium">8 dk yürüyüş</td></tr>
+            <tr><td class="py-3">Tekne turları iskelesi</td><td class="py-3 text-right font-medium">10 dk araç</td></tr>
+            <tr><td class="py-3">Dalaman Havalimanı</td><td class="py-3 text-right font-medium">35 dk araç</td></tr>
+          </tbody>
+        </table>
+        <p class="mt-5 text-sm text-olive-500">Havalimanı transferi talep üzerine ücretli olarak ayarlanır.</p>
+      </div>
+      <div class="img-box rounded-lg overflow-hidden aspect-[4/3]">
+        <iframe src="https://maps.google.com/maps?q=Muğla&z=13&output=embed" title="Konum haritası" class="w-full h-full border-0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- SSS -->
+  <section id="sss" class="py-24 bg-stone-100">
+    <div class="max-w-6xl mx-auto px-5 grid md:grid-cols-3 gap-10">
+      <h2 class="font-serif text-4xl md:text-5xl font-semibold">Sıkça sorulanlar</h2>
+      <div class="md:col-span-2 divide-y divide-stone-300 border-y border-stone-300">
+        <details class="py-5"><summary class="flex justify-between items-center gap-4 cursor-pointer font-medium">Giriş ve çıkış saatleri nedir?<span class="faq-icon text-2xl font-light text-olive-500 transition">+</span></summary><p class="mt-3 text-sm text-olive-700 leading-relaxed">Giriş 14:00, çıkış 11:00. Oda hazırsa erken giriş ücretsiz yapılabilir.</p></details>
+        <details class="py-5"><summary class="flex justify-between items-center gap-4 cursor-pointer font-medium">Çocuklu aileler konaklayabilir mi?<span class="faq-icon text-2xl font-light text-olive-500 transition">+</span></summary><p class="mt-3 text-sm text-olive-700 leading-relaxed">Otelimiz 12 yaş ve üzeri misafirlere hizmet vermektedir.</p></details>
+        <details class="py-5"><summary class="flex justify-between items-center gap-4 cursor-pointer font-medium">Ödeme nasıl yapılıyor?<span class="faq-icon text-2xl font-light text-olive-500 transition">+</span></summary><p class="mt-3 text-sm text-olive-700 leading-relaxed">Rezervasyon onayı için ilk gecenin ücreti havale/EFT ile alınır, kalan tutar girişte nakit veya kartla ödenir.</p></details>
+        <details class="py-5"><summary class="flex justify-between items-center gap-4 cursor-pointer font-medium">Kış aylarında açık mısınız?<span class="faq-icon text-2xl font-light text-olive-500 transition">+</span></summary><p class="mt-3 text-sm text-olive-700 leading-relaxed">Evet, yıl boyunca açığız. Kasım–Mart döneminde özel fiyatlar uygulanır.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-olive-900 text-white/70 text-sm">
+    <div class="max-w-6xl mx-auto px-5 py-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div><p class="font-serif text-2xl font-semibold text-white">Mavibağ</p><p class="mt-1 text-xs tracking-[0.25em]">BUTİK OTEL</p></div>
+      <div><p class="font-medium text-white">Adres</p><p class="mt-2">Örnek Köyü, Mavi Sokak No:7<br>Muğla</p></div>
+      <div><p class="font-medium text-white">İletişim</p><p class="mt-2">+90 555 000 00 00<br>rezervasyon@ornek-otel.com</p></div>
+      <div><p class="font-medium text-white">Takip edin</p><p class="mt-2"><a href="#" class="hover:text-white">Instagram</a> · <a href="#" class="hover:text-white">Facebook</a></p></div>
+    </div>
+    <div class="border-t border-white/10">
+      <div class="max-w-6xl mx-auto px-5 py-5 flex flex-col sm:flex-row justify-between gap-2 text-xs">
+        <p>© 2026 Mavibağ Butik Otel</p>
+        <p>Tasarım örneğidir; otel, fiyat ve iletişim bilgileri temsilidir. Fotoğraflar: Unsplash</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP -->
+  <a href="https://wa.me/905550000000?text=Merhaba%2C%20rezervasyon%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener"
+     class="fixed bottom-5 right-5 z-50 w-14 h-14 rounded-full bg-[#25D366] shadow-lg grid place-items-center hover:scale-105 transition" aria-label="WhatsApp ile yazın">
+    <svg viewBox="0 0 32 32" class="w-7 h-7" fill="white"><path d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.3.6 4.5 1.8 6.4L3 29l7.2-1.9c1.8 1 3.8 1.5 5.8 1.5 7 0 12.7-5.6 12.7-12.6S23 3 16 3zm0 23c-1.9 0-3.7-.5-5.3-1.4l-.4-.2-4.3 1.1 1.1-4.1-.3-.4c-1-1.6-1.6-3.5-1.6-5.4C5.3 9.9 10.1 5.2 16 5.2s10.6 4.7 10.6 10.5S21.9 26 16 26zm5.8-7.8c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1c-.3-.2-1.3-.5-2.5-1.5-.9-.8-1.5-1.8-1.7-2.1s0-.5.1-.6l.5-.6c.2-.2.2-.4.3-.6s0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4s-1.2 1.1-1.2 2.7 1.2 3.1 1.4 3.3 2.4 3.6 5.7 5c.8.3 1.4.5 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5s.3-1.3.2-1.5c-.1-.1-.3-.2-.6-.4z"/></svg>
+  </a>
+
+  <script>
+    const WHATSAPP_NO = '905550000000';
+
+    // Menü
+    const menuBtn = document.getElementById('menuBtn'), mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+    // Hero geçilince menü beyaz zemine geçsin
+    const header = document.getElementById('header'), navCta = document.getElementById('navCta');
+    const onScroll = () => {
+      const s = scrollY > window.innerHeight * 0.6;
+      header.classList.toggle('bg-white', s); header.classList.toggle('shadow-sm', s);
+      header.classList.toggle('text-white', !s); header.classList.toggle('text-olive-900', s);
+      navCta.classList.toggle('border-white/70', !s); navCta.classList.toggle('border-olive-700', s);
+    };
+    addEventListener('scroll', onScroll); onScroll();
+
+    // Fotoğraf yüklenemezse kırık ikon görünmesin
+    document.querySelectorAll('img').forEach(img => img.addEventListener('error', () => img.style.visibility = 'hidden'));
+
+    // Tarih alanları
+    const bugun = new Date().toISOString().split('T')[0];
+    document.querySelectorAll('input[type="date"]').forEach(i => i.min = bugun);
+
+    const f = document.getElementById('rezForm');
+    const ozet = document.getElementById('ozet'), toplam = document.getElementById('toplam'), hata = document.getElementById('rezHata');
+    const tl = n => '₺' + n.toLocaleString('tr-TR');
+    const geceSayisi = () => (f.giris.value && f.cikis.value) ? Math.round((new Date(f.cikis.value) - new Date(f.giris.value)) / 864e5) : 0;
+
+    function hesapla() {
+      if (f.giris.value) f.cikis.min = f.giris.value;
+      const g = geceSayisi();
+      if (g > 0) {
+        const brut = g * Number(f.oda.value), net = Math.round(brut * 0.9);
+        ozet.innerHTML = `${g} gece · ${f.oda.selectedOptions[0].text}<br><span class="line-through">${tl(brut)}</span> · %10 direkt rezervasyon indirimi`;
+        toplam.textContent = tl(net);
+      } else { ozet.textContent = 'Tarih seçtiğinizde tahmini tutar burada görünür.'; toplam.textContent = ''; }
+    }
+    ['change', 'input'].forEach(ev => f.addEventListener(ev, hesapla));
+
+    // Hızlı çubuk: değerleri ana forma taşı ve forma kaydır
+    const h = document.getElementById('hizliForm');
+    h.addEventListener('submit', e => {
+      e.preventDefault();
+      f.giris.value = h.giris.value; f.cikis.value = h.cikis.value; f.kisi.value = h.kisi.value;
+      hesapla();
+      document.getElementById('rezervasyon').scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => f.ad.focus({ preventScroll: true }), 600);
+    });
+
+    f.addEventListener('submit', e => {
+      e.preventDefault();
+      const tel = f.tel.value.replace(/\D/g, '');
+      let msg = '';
+      if (geceSayisi() < 1) msg = 'Lütfen geçerli giriş ve çıkış tarihleri seçin.';
+      else if (f.ad.value.trim().length < 3) msg = 'Lütfen adınızı ve soyadınızı yazın.';
+      else if (!/^(90)?0?5\d{9}$/.test(tel)) msg = 'Lütfen geçerli bir cep telefonu numarası girin.';
+      if (msg) { hata.textContent = msg; hata.classList.remove('hidden'); return; }
+      hata.classList.add('hidden');
+      const fmt = d => new Date(d).toLocaleDateString('tr-TR');
+      const metin = `Merhaba, rezervasyon talebim:\n• ${f.oda.selectedOptions[0].text}\n• ${fmt(f.giris.value)} – ${fmt(f.cikis.value)} (${geceSayisi()} gece)\n• ${f.kisi.value} yetişkin\n• Tahmini tutar: ${toplam.textContent}\n• ${f.ad.value} / ${f.tel.value}`;
+      window.open(`https://wa.me/${WHATSAPP_NO}?text=${encodeURIComponent(metin)}`, '_blank');
+    });
+  </script>
+</body>
+</html>

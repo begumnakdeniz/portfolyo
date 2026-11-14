@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DentaLux Ağız ve Diş Sağlığı Polikliniği | Muğla</title>
+  <meta name="description" content="DentaLux Ağız ve Diş Sağlığı Polikliniği: implant, ortodonti, estetik diş hekimliği ve genel diş tedavileri. Online randevu talebi oluşturun.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#1d4a4c">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="DentaLux Ağız ve Diş Sağlığı Polikliniği">
+  <meta property="og:description" content="İmplant, ortodonti, estetik diş hekimliği ve genel diş tedavileri. Online randevu talebi oluşturun.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&h=630&q=80">
+  <meta name="twitter:card" content="summary_large_image">
+  <style>
+    details summary::-webkit-details-marker { display: none; }
+    details[open] .faq-icon { transform: rotate(45deg); }
+    .img-box { background: #dfe7e7; }
+  </style>
+</head>
+<body class="font-sans text-slate-800 bg-white antialiased">
+
+  <!-- BİLGİ ÇUBUĞU -->
+  <div class="hidden md:block bg-brand-900 text-brand-100 text-[13px]">
+    <div class="max-w-6xl mx-auto px-5 h-10 flex items-center justify-between">
+      <p>Örnek Mah. Sağlık Cad. No:1, Menteşe / Muğla</p>
+      <div class="flex gap-6">
+        <p>Pzt–Cmt 09:00–19:00</p>
+        <a href="tel:+905550000000" class="hover:text-white">+90 555 000 00 00</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ÜST MENÜ -->
+  <header id="header" class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-slate-100">
+    <nav class="max-w-6xl mx-auto px-5 h-[72px] flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2.5">
+        <span class="w-9 h-9 rounded-lg bg-brand-700 grid place-items-center">
+          <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="white" stroke-width="1.6" stroke-linejoin="round"><path d="M12 5.2c-1.8-1.2-3.8-1.7-5.5-1C4 5.1 3.4 7.8 4.2 10.8c.6 2.2 1.2 4.2 1.7 6.5.4 1.9 1 3.7 2.2 3.7 1.3 0 1.5-2.4 2-4.2.3-1.2 1-1.8 1.9-1.8s1.6.6 1.9 1.8c.5 1.8.7 4.2 2 4.2 1.2 0 1.8-1.8 2.2-3.7.5-2.3 1.1-4.3 1.7-6.5.8-3 .2-5.7-2.3-6.6-1.7-.7-3.7-.2-5.5 1z"/></svg>
+        </span>
+        <span class="leading-tight"><span class="block font-bold text-[17px] text-brand-900">DentaLux</span><span class="block text-[11px] text-slate-500">Ağız ve Diş Sağlığı Polikliniği</span></span>
+      </a>
+      <ul class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-600">
+        <li><a href="#tedaviler" class="hover:text-brand-600">Tedaviler</a></li>
+        <li><a href="#surec" class="hover:text-brand-600">Tedavi Süreci</a></li>
+        <li><a href="#klinik" class="hover:text-brand-600">Kliniğimiz</a></li>
+        <li><a href="#sss" class="hover:text-brand-600">SSS</a></li>
+        <li><a href="#iletisim" class="hover:text-brand-600">İletişim</a></li>
+      </ul>
+      <div class="hidden lg:flex items-center gap-3">
+        <a href="tel:+905550000000" class="text-sm font-semibold text-brand-700 px-3 py-2">Hemen Ara</a>
+        <a href="#randevu" class="bg-brand-700 hover:bg-brand-800 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition">Randevu Al</a>
+      </div>
+      <button id="menuBtn" class="lg:hidden p-2 text-brand-900" aria-label="Menüyü aç">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </nav>
+    <div id="mobileMenu" class="hidden lg:hidden border-t border-slate-100 px-5 pb-5 bg-white">
+      <a href="#tedaviler" class="block py-3 border-b border-slate-100">Tedaviler</a>
+      <a href="#surec" class="block py-3 border-b border-slate-100">Tedavi Süreci</a>
+      <a href="#klinik" class="block py-3 border-b border-slate-100">Kliniğimiz</a>
+      <a href="#sss" class="block py-3 border-b border-slate-100">SSS</a>
+      <a href="#iletisim" class="block py-3 border-b border-slate-100">İletişim</a>
+      <a href="#randevu" class="mt-4 block text-center bg-brand-700 text-white font-semibold py-3 rounded-lg">Randevu Al</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="bg-paper">
+    <div class="max-w-6xl mx-auto px-5 py-14 md:py-20 grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
+      <div>
+        <h1 class="text-4xl md:text-5xl font-bold text-brand-900 leading-[1.12] tracking-tight">Sağlıklı ve estetik gülüşler için modern diş kliniği</h1>
+        <p class="mt-5 text-lg text-slate-600 leading-relaxed max-w-lg">İmplanttan ortodontiye tüm tedavileri tek klinikte, uzman hekim kadrosu ve dijital planlama ile sunuyoruz.</p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#randevu" class="bg-brand-700 hover:bg-brand-800 text-white font-semibold px-6 py-3.5 rounded-lg transition">Online Randevu Talebi</a>
+          <a href="tel:+905550000000" class="bg-white hover:bg-slate-50 border border-slate-200 text-brand-900 font-semibold px-6 py-3.5 rounded-lg transition">0555 000 00 00</a>
+        </div>
+        <ul class="mt-9 grid sm:grid-cols-3 gap-3 text-sm text-slate-600">
+          <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Ücretsiz ön muayene</li>
+          <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Kredi kartına taksit</li>
+          <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Cumartesi açık</li>
+        </ul>
+      </div>
+      <div class="img-box rounded-2xl overflow-hidden aspect-[4/3] md:aspect-[5/4]">
+        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1400&q=80" alt="Modern tedavi odası ve diş ünitesi" class="w-full h-full object-cover" loading="eager">
+      </div>
+    </div>
+  </section>
+
+  <!-- TEDAVİLER -->
+  <section id="tedaviler" class="py-20">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold text-brand-900 tracking-tight">Tedavilerimiz</h2>
+          <p class="mt-3 text-slate-600 max-w-xl">Muayene sonrasında size özel tedavi planını, süreyi ve ücreti yazılı olarak paylaşıyoruz.</p>
+        </div>
+        <a href="#randevu" class="text-sm font-semibold text-brand-600 hover:text-brand-800">Muayene randevusu al →</a>
+      </div>
+      <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 border-t border-l border-slate-200">
+        <article class="p-7 border-r border-b border-slate-200 hover:bg-paper transition">
+          <p class="text-xs font-semibold text-brand-500">01</p>
+          <h3 class="mt-3 text-lg font-semibold text-brand-900">İmplant Tedavisi</h3>
+          <p class="mt-2 text-sm text-slate-600 leading-relaxed">Eksik dişlerin yerine çene kemiğine yerleştirilen titanyum vidalarla kalıcı ve doğal görünümlü çözüm.</p>
+        </article>
+        <article class="p-7 border-r border-b border-slate-200 hover:bg-paper transition">
+          <p class="text-xs font-semibold text-brand-500">02</p>
+          <h3 class="mt-3 text-lg font-semibold text-brand-900">Ortodonti</h3>
+          <p class="mt-2 text-sm text-slate-600 leading-relaxed">Şeffaf plak ve braket seçenekleriyle çapraşık dişlerin ve kapanış bozukluklarının düzeltilmesi.</p>
+        </article>
+        <article class="p-7 border-r border-b border-slate-200 hover:bg-paper transition">
+          <p class="text-xs font-semibold text-brand-500">03</p>
+          <h3 class="mt-3 text-lg font-semibold text-brand-900">Estetik Diş Hekimliği</h3>
+          <p class="mt-2 text-sm text-slate-600 leading-relaxed">Lamina, zirkonyum kaplama ve estetik dolgularla yüz hatlarınıza uygun gülüş tasarımı.</p>
+        </article>
+        <article class="p-7 border-r border-b border-slate-200 hover:bg-paper transition">
+          <p class="text-xs font-semibold text-brand-500">04</p>
+          <h3 class="mt-3 text-lg font-semibold text-brand-900">Diş Beyazlatma</h3>
+          <p class="mt-2 text-sm text-slate-600 leading-relaxed">Klinikte tek seansta uygulanan, hekim kontrolünde güvenli beyazlatma.</p>
+        </article>
+        <article class="p-7 border-r border-b border-slate-200 hover:bg-paper transition">
+          <p class="text-xs font-semibold text-brand-500">05</p>
+          <h3 class="mt-3 text-lg font-semibold text-brand-900">Kanal Tedavisi</h3>
+          <p class="mt-2 text-sm text-slate-600 leading-relaxed">İltihaplı dişin çekilmeden kurtarılması; lokal anestezi ile konforlu uygulama.</p>
+        </article>
+        <article class="p-7 border-r border-b border-slate-200 hover:bg-paper transition">
+          <p class="text-xs font-semibold text-brand-500">06</p>
+          <h3 class="mt-3 text-lg font-semibold text-brand-900">Çocuk Diş Hekimliği</h3>
+          <p class="mt-2 text-sm text-slate-600 leading-relaxed">Çocuklara özel yaklaşımla koruyucu uygulamalar, fissür örtücü ve süt dişi tedavileri.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEDAVİ SÜRECİ -->
+  <section id="surec" class="py-20 bg-paper">
+    <div class="max-w-6xl mx-auto px-5 grid md:grid-cols-2 gap-12 items-center">
+      <div class="img-box rounded-2xl overflow-hidden aspect-[4/3]">
+        <img src="https://images.unsplash.com/photo-1777331903190-341a3dd0441b?auto=format&fit=crop&w=1200&q=80" alt="Hekim hastasıyla tedavi planını konuşuyor" class="w-full h-full object-cover" loading="lazy">
+      </div>
+      <div>
+        <h2 class="text-3xl md:text-4xl font-bold text-brand-900 tracking-tight">Tedavi süreciniz nasıl ilerler?</h2>
+        <p class="mt-3 text-slate-600">Her adımda ne yapılacağını önceden bilirsiniz; sürpriz ücret ya da ek işlem olmaz.</p>
+        <ol class="mt-8 space-y-6">
+          <li class="flex gap-5">
+            <span class="w-10 h-10 shrink-0 rounded-full bg-brand-700 text-white grid place-items-center text-sm font-semibold">1</span>
+            <div><h3 class="font-semibold text-brand-900">Muayene ve görüntüleme</h3><p class="mt-1 text-sm text-slate-600">Ağız içi muayene ve gerekli durumlarda dijital röntgen ile mevcut durum belirlenir.</p></div>
+          </li>
+          <li class="flex gap-5">
+            <span class="w-10 h-10 shrink-0 rounded-full bg-brand-700 text-white grid place-items-center text-sm font-semibold">2</span>
+            <div><h3 class="font-semibold text-brand-900">Yazılı tedavi planı</h3><p class="mt-1 text-sm text-slate-600">Seçenekler, tahmini süre ve ücret size yazılı olarak sunulur; kararı siz verirsiniz.</p></div>
+          </li>
+          <li class="flex gap-5">
+            <span class="w-10 h-10 shrink-0 rounded-full bg-brand-700 text-white grid place-items-center text-sm font-semibold">3</span>
+            <div><h3 class="font-semibold text-brand-900">Tedavi ve kontrol</h3><p class="mt-1 text-sm text-slate-600">Tedavi tamamlandıktan sonra kontrol randevularınız planlanır ve takibiniz yapılır.</p></div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- KLİNİK -->
+  <section id="klinik" class="py-20">
+    <div class="max-w-6xl mx-auto px-5 grid md:grid-cols-12 gap-10 items-start">
+      <div class="md:col-span-5">
+        <h2 class="text-3xl md:text-4xl font-bold text-brand-900 tracking-tight">Kliniğimiz</h2>
+        <p class="mt-4 text-slate-600 leading-relaxed">DentaLux, ağız ve diş sağlığının tüm alanlarında hizmet veren bir polikliniktir. Uzmanlık alanına göre çalışan hekim kadromuz, her hastanın tedavisini başından sonuna kadar aynı hekimle sürdürmesini esas alır.</p>
+        <dl class="mt-8 grid grid-cols-2 gap-px bg-slate-200 rounded-xl overflow-hidden text-sm">
+          <div class="bg-white p-5"><dt class="text-slate-500">Sterilizasyon</dt><dd class="mt-1 font-semibold text-brand-900">Her hasta için tek kullanımlık set</dd></div>
+          <div class="bg-white p-5"><dt class="text-slate-500">Görüntüleme</dt><dd class="mt-1 font-semibold text-brand-900">Dijital röntgen</dd></div>
+          <div class="bg-white p-5"><dt class="text-slate-500">Ödeme</dt><dd class="mt-1 font-semibold text-brand-900">Nakit, kart, taksit</dd></div>
+          <div class="bg-white p-5"><dt class="text-slate-500">Erişim</dt><dd class="mt-1 font-semibold text-brand-900">Otopark, engelsiz giriş</dd></div>
+        </dl>
+      </div>
+      <div class="md:col-span-7 grid grid-cols-2 gap-4">
+        <div class="img-box rounded-2xl overflow-hidden aspect-[3/4]"><img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=900&q=80" alt="Ağız içi muayene" class="w-full h-full object-cover" loading="lazy"></div>
+        <div class="img-box rounded-2xl overflow-hidden aspect-[3/4] mt-10"><img src="https://images.unsplash.com/photo-1762625570087-6d98fca29531?auto=format&fit=crop&w=900&q=80" alt="Klinik bekleme alanı" class="w-full h-full object-cover" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RANDEVU + İLETİŞİM -->
+  <section id="randevu" class="py-20 bg-brand-900 text-white">
+    <div id="iletisim" class="max-w-6xl mx-auto px-5 grid lg:grid-cols-5 gap-12">
+      <div class="lg:col-span-2">
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Randevu talebi oluşturun</h2>
+        <p class="mt-4 text-brand-100/80 leading-relaxed">Formu gönderdikten sonra hasta koordinatörümüz çalışma saatleri içinde sizi arayarak randevunuzu kesinleştirir.</p>
+        <dl class="mt-10 space-y-6 text-sm">
+          <div><dt class="text-brand-200">Telefon</dt><dd class="mt-1 text-base font-semibold"><a href="tel:+905550000000">+90 555 000 00 00</a></dd></div>
+          <div><dt class="text-brand-200">Adres</dt><dd class="mt-1 text-base">Örnek Mah. Sağlık Cad. No:1<br>Menteşe / Muğla</dd></div>
+          <div><dt class="text-brand-200">Çalışma saatleri</dt><dd class="mt-1 text-base">Pazartesi–Cumartesi 09:00–19:00<br>Pazar kapalı</dd></div>
+        </dl>
+      </div>
+      <form id="randevuForm" class="lg:col-span-3 bg-white text-slate-800 rounded-2xl p-7 md:p-9 grid sm:grid-cols-2 gap-5" novalidate>
+        <label class="block"><span class="text-sm font-medium text-slate-700">Ad Soyad</span>
+          <input name="ad" required class="mt-1.5 w-full rounded-lg border border-slate-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500" placeholder="Adınız Soyadınız"></label>
+        <label class="block"><span class="text-sm font-medium text-slate-700">Telefon</span>
+          <input name="tel" type="tel" required class="mt-1.5 w-full rounded-lg border border-slate-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500" placeholder="05XX XXX XX XX"></label>
+        <label class="block"><span class="text-sm font-medium text-slate-700">Tedavi</span>
+          <select name="tedavi" class="mt-1.5 w-full rounded-lg border border-slate-300 px-4 py-3 bg-white focus:outline-none focus:ring-2 focus:ring-brand-500">
+            <option>Genel muayene</option><option>İmplant</option><option>Ortodonti</option><option>Estetik diş hekimliği</option><option>Diş beyazlatma</option><option>Kanal tedavisi</option><option>Çocuk diş hekimliği</option>
+          </select></label>
+        <label class="block"><span class="text-sm font-medium text-slate-700">Tercih edilen gün</span>
+          <input name="tarih" type="date" class="mt-1.5 w-full rounded-lg border border-slate-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-500"></label>
+        <label class="block sm:col-span-2"><span class="text-sm font-medium text-slate-700">Mesajınız <span class="text-slate-400 font-normal">(isteğe bağlı)</span></span>
+          <textarea name="not" rows="3" class="mt-1.5 w-full rounded-lg border border-slate-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-500" placeholder="Şikâyetinizi kısaca yazabilirsiniz"></textarea></label>
+        <label class="sm:col-span-2 flex items-start gap-3 text-sm text-slate-600">
+          <input type="checkbox" name="kvkk" required class="mt-0.5 w-4 h-4 accent-brand-700"> <span><a href="#" class="underline">KVKK Aydınlatma Metni</a>'ni okudum, kişisel verilerimin randevu amacıyla işlenmesini kabul ediyorum.</span></label>
+        <p id="formHata" class="sm:col-span-2 hidden text-sm text-red-600"></p>
+        <button class="sm:col-span-2 bg-brand-700 hover:bg-brand-800 text-white font-semibold py-3.5 rounded-lg transition">Randevu Talebini Gönder</button>
+        <div id="formBasari" class="sm:col-span-2 hidden rounded-lg bg-brand-50 border border-brand-100 text-brand-900 p-5 text-sm">
+          <p class="font-semibold">Talebiniz alındı.</p><p class="mt-1">Hasta koordinatörümüz en kısa sürede sizi arayacaktır.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- SSS -->
+  <section id="sss" class="py-20">
+    <div class="max-w-6xl mx-auto px-5 grid md:grid-cols-3 gap-10">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-bold text-brand-900 tracking-tight">Sıkça sorulan sorular</h2>
+        <p class="mt-4 text-slate-600">Sorunuzun cevabını bulamadıysanız bizi arayabilirsiniz.</p>
+      </div>
+      <div class="md:col-span-2 divide-y divide-slate-200 border-y border-slate-200">
+        <details class="py-5"><summary class="flex justify-between items-center gap-4 cursor-pointer font-semibold text-brand-900">Ön muayene ücretli mi?<span class="faq-icon text-2xl font-light text-brand-500 transition">+</span></summary><p class="mt-3 text-slate-600 leading-relaxed">İlk muayene ücretsizdir. Röntgen gerekirse ücreti önceden bildirilir.</p></details>
+        <details class="py-5"><summary class="flex justify-between items-center gap-4 cursor-pointer font-semibold text-brand-900">İmplant tedavisi ne kadar sürer?<span class="faq-icon text-2xl font-light text-brand-500 transition">+</span></summary><p class="mt-3 text-slate-600 leading-relaxed">Kemik yapısına bağlı olarak genellikle 2–4 ay içinde tamamlanır. Bu sürede geçici diş kullanılabilir.</p></details>
+        <details class="py-5"><summary class="flex justify-between items-center gap-4 cursor-pointer font-semibold text-brand-900">Taksit imkânı var mı?<span class="faq-icon text-2xl font-light text-brand-500 transition">+</span></summary><p class="mt-3 text-slate-600 leading-relaxed">Anlaşmalı kredi kartlarına taksit seçenekleri sunulmaktadır. Güncel seçenekler için bizi arayın.</p></details>
+        <details class="py-5"><summary class="flex justify-between items-center gap-4 cursor-pointer font-semibold text-brand-900">Şeffaf plak herkese uygulanabilir mi?<span class="faq-icon text-2xl font-light text-brand-500 transition">+</span></summary><p class="mt-3 text-slate-600 leading-relaxed">Çoğu çapraşıklık vakasında uygulanabilir; uygunluk muayenede değerlendirilir.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- HARİTA -->
+  <section aria-label="Konum" class="h-80 img-box">
+    <iframe src="https://maps.google.com/maps?q=Mente%C5%9Fe%2C%20Mu%C4%9Fla&z=14&output=embed" title="Klinik konumu" class="w-full h-full border-0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-paper border-t border-slate-200 text-sm">
+    <div class="max-w-6xl mx-auto px-5 py-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div>
+        <p class="font-bold text-brand-900 text-base">DentaLux</p>
+        <p class="mt-2 text-slate-600">Ağız ve Diş Sağlığı Polikliniği</p>
+      </div>
+      <div><p class="font-semibold text-brand-900">İletişim</p><p class="mt-2 text-slate-600">+90 555 000 00 00<br>info@ornek-klinik.com</p></div>
+      <div><p class="font-semibold text-brand-900">Adres</p><p class="mt-2 text-slate-600">Örnek Mah. Sağlık Cad. No:1<br>Menteşe / Muğla</p></div>
+      <div><p class="font-semibold text-brand-900">Çalışma Saatleri</p><p class="mt-2 text-slate-600">Pzt–Cmt 09:00–19:00<br>Pazar kapalı</p></div>
+    </div>
+    <div class="border-t border-slate-200">
+      <div class="max-w-6xl mx-auto px-5 py-5 flex flex-col sm:flex-row justify-between gap-2 text-xs text-slate-500">
+        <p>© 2026 DentaLux. Tüm hakları saklıdır.</p>
+        <p>Tasarım örneğidir; klinik ve iletişim bilgileri temsilidir. Fotoğraflar: Unsplash</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP -->
+  <a href="https://wa.me/905550000000?text=Merhaba%2C%20randevu%20almak%20istiyorum." target="_blank" rel="noopener"
+     class="fixed bottom-5 right-5 z-50 w-14 h-14 rounded-full bg-[#25D366] shadow-lg grid place-items-center hover:scale-105 transition" aria-label="WhatsApp ile yazın">
+    <svg viewBox="0 0 32 32" class="w-7 h-7" fill="white"><path d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.3.6 4.5 1.8 6.4L3 29l7.2-1.9c1.8 1 3.8 1.5 5.8 1.5 7 0 12.7-5.6 12.7-12.6S23 3 16 3zm0 23c-1.9 0-3.7-.5-5.3-1.4l-.4-.2-4.3 1.1 1.1-4.1-.3-.4c-1-1.6-1.6-3.5-1.6-5.4C5.3 9.9 10.1 5.2 16 5.2s10.6 4.7 10.6 10.5S21.9 26 16 26zm5.8-7.8c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1c-.3-.2-1.3-.5-2.5-1.5-.9-.8-1.5-1.8-1.7-2.1s0-.5.1-.6l.5-.6c.2-.2.2-.4.3-.6s0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4s-1.2 1.1-1.2 2.7 1.2 3.1 1.4 3.3 2.4 3.6 5.7 5c.8.3 1.4.5 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5s.3-1.3.2-1.5c-.1-.1-.3-.2-.6-.4z"/></svg>
+  </a>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn'), mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+    // Fotoğraf yüklenemezse boş kutu kalsın, kırık ikon görünmesin
+    document.querySelectorAll('img').forEach(img => img.addEventListener('error', () => img.style.visibility = 'hidden'));
+
+    document.querySelector('input[name="tarih"]').min = new Date().toISOString().split('T')[0];
+
+    // Form doğrulama (canlıda Formspree / backend endpoint'ine bağlanacak)
+    const form = document.getElementById('randevuForm'), hata = document.getElementById('formHata'), basari = document.getElementById('formBasari');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const d = Object.fromEntries(new FormData(form));
+      const tel = (d.tel || '').replace(/\D/g, '');
+      let msg = '';
+      if (!d.ad || d.ad.trim().length < 3) msg = 'Lütfen adınızı ve soyadınızı yazın.';
+      else if (!/^(90)?0?5\d{9}$/.test(tel)) msg = 'Lütfen geçerli bir cep telefonu numarası girin.';
+      else if (!form.kvkk.checked) msg = 'Devam etmek için KVKK onayını işaretleyin.';
+      if (msg) { hata.textContent = msg; hata.classList.remove('hidden'); return; }
+      hata.classList.add('hidden');
+      form.querySelector('button').classList.add('hidden');
+      basari.classList.remove('hidden');
+    });
+  </script>
+</body>
+</html>
