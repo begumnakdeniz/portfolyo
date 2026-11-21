@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>nefes · Reformer Pilates Stüdyosu</title>
+<meta name="description" content="nefes reformer studio: en fazla 6 kişilik sınıflarla reformer pilates. Temel reformer, akış, birebir ve düet dersleri. Deneme dersini WhatsApp'tan ayırt.">
+<meta property="og:title" content="nefes · Reformer Pilates Stüdyosu">
+<meta property="og:description" content="Küçük sınıflar, yumuşak ışık ve seni adınla tanıyan eğitmenler.">
+<meta property="og:image" content="img/hero.webp">
+<meta name="theme-color" content="#1E2A20">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500&family=Unbounded:wght@300;400&display=swap">
+<link rel="preload" as="image" href="img/hero.webp" fetchpriority="high">
+<style>
+/* VOICE: sakin, butik, kendinden emin; az söz, geniş harf aralığı
+   IDEA: stüdyonun kemerleri; görseller kemer çerçevelerde, marka adı fotoğrafın üstüne oturur
+   PICTURE: karartılmış, hareket bulanıklığı katmanlı hero; bento ders kolajı; sabitlenen ve fotoğrafı değişen özellik bölümü
+   COLOUR and TYPE: orman yeşili + krem + adaçayı vurgu; Lexend ince büyük harf başlıklar, Unbounded marka adı
+   LAYOUT: tam ekran hero, bento, koyu manifesto, program sekmeleri, kemerli stüdyo, üyelik satırları, dev logolu altbilgi */
+:root{--forest:#1E2A20;--forest2:#2C3A2E;--cream:#F2EEE6;--paper:#FAF8F3;--sand:#E7E1D5;--line:#D5CFC2;--sage:#D3DDA4;--muted:#5A6153;--soft:#6B7162;--pale:#A9B39E;
+--sans:Lexend,system-ui,-apple-system,"Segoe UI",sans-serif;--wide:Unbounded,Lexend,sans-serif;--ease:cubic-bezier(.22,1,.36,1);--pad:4vw}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:90px;overflow-x:clip}
+html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{margin:0;background:var(--cream);color:var(--forest);font:300 16px/1.6 var(--sans);overflow-x:clip;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3,p{margin:0}
+.wrap{max-width:1360px;margin:0 auto;padding:0 var(--pad)}
+.h2{font-weight:300;font-size:clamp(26px,2.6vw,36px);letter-spacing:.12em;line-height:1.25;text-wrap:balance}
+.sub{font-size:15px;color:var(--muted);margin-top:10px}
+.eyebrow{font-size:12px;font-weight:400;letter-spacing:.16em}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 24px;border-radius:999px;font:400 14px/1 var(--sans);text-decoration:none;border:1px solid transparent;cursor:pointer;white-space:nowrap;transition:transform .4s var(--ease),background-color .3s,color .3s;touch-action:manipulation}
+.btn:hover{transform:translateY(-2px)}
+.btn-sage{background:var(--sage);color:var(--forest);font-weight:500}
+.btn-dark{background:var(--forest);color:var(--cream)}
+.btn-ghost{border-color:rgb(242 238 230 / .6);color:var(--cream);background:transparent}
+.btn-ghost:hover{background:rgb(242 238 230 / .12)}
+:focus-visible{outline:2px solid #8FA35A;outline-offset:3px;border-radius:8px}
+.skip{position:absolute;left:-9999px;top:10px;z-index:200}.skip:focus{left:12px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.arch{border-radius:999px 999px 32px 32px}
+/* header */
+header{position:fixed;inset:0 0 auto;z-index:60;color:var(--cream);transition:background-color .4s,color .4s,box-shadow .4s}
+header.solid{background:rgb(242 238 230 / .9);backdrop-filter:blur(14px);color:var(--forest);box-shadow:0 1px 0 var(--line)}
+header.solid .btn-ghost{border-color:var(--forest);color:var(--forest)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px;height:84px;max-width:1360px;margin:0 auto;padding:0 var(--pad)}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:400 18px var(--wide);letter-spacing:.02em}
+.logo svg{width:22px;height:22px}
+.links{display:flex;gap:4px;list-style:none;margin:0;padding:0}
+.links a{display:block;padding:12px 14px;font-size:14px;font-weight:400;text-decoration:none;border-radius:999px}
+.links a:hover{background:rgb(127 140 110 / .18)}
+.nav-cta{display:flex;gap:8px}
+.menu-btn{display:none;width:44px;height:44px;border-radius:50%;border:1px solid currentColor;background:transparent;color:inherit;cursor:pointer}
+/* hero */
+.hero{position:relative;height:100svh;min-height:640px;max-height:980px;overflow:hidden;background:var(--forest);color:var(--cream)}
+.hero .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 28%}
+.hero .base{filter:saturate(.85) brightness(.62)}
+.hero .ghost{transform:translateX(-34px);filter:blur(10px) brightness(.7);opacity:.45;mix-blend-mode:screen}
+.hero .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgb(20 30 22 / .55) 0%,rgb(20 30 22 / .12) 35%,rgb(20 30 22 / .25) 62%,rgb(20 30 22 / .92) 100%)}
+.hero-foot{position:absolute;left:0;right:0;bottom:0;padding:0 var(--pad) 26px}
+.hero-labels{max-width:1360px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;font-size:12px;font-weight:400;letter-spacing:.14em;color:#E4E8D2}
+.word{margin:6px auto 0;max-width:1360px;font:300 clamp(104px,23vw,330px)/.82 var(--wide);letter-spacing:.01em;text-align:center;display:flex;justify-content:center;overflow:hidden;padding-bottom:.04em}
+.word span{display:inline-block;will-change:transform}
+/* bento */
+.center{text-align:center}
+.bento{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:clamp(200px,19vw,270px);gap:12px;margin-top:44px}
+.tile{position:relative;overflow:hidden;border-radius:32px;text-decoration:none;color:var(--cream);background:var(--sand)}
+.tile img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.tile:hover img{transform:scale(1.05)}
+.tile.tall{grid-row:span 2}
+.tile .tl{position:absolute;font-size:15px;font-weight:400;letter-spacing:.06em;text-shadow:0 1px 12px rgb(0 0 0 / .4)}
+.tile .bar{position:absolute;left:0;right:0;bottom:0;padding:70px 26px 24px;background:linear-gradient(transparent,rgb(20 30 22 / .78));display:flex;justify-content:space-between;align-items:flex-end;gap:10px}
+.tile .bar b{font-size:22px;font-weight:400;letter-spacing:.04em}
+.tile .bar i{font-style:normal;font-size:12px;letter-spacing:.12em}
+/* manifesto */
+.mani{background:var(--forest);color:var(--cream);padding:clamp(88px,10vw,140px) var(--pad);text-align:center}
+.mani .eyebrow{color:var(--pale);margin-bottom:26px}
+.mani p.txt{max-width:1080px;margin:0 auto;font-size:clamp(22px,2.7vw,38px);letter-spacing:.06em;line-height:1.75}
+.mani .w{opacity:.22;transition:opacity .35s}.mani .w.on{opacity:1}
+.pill{display:inline-block;vertical-align:middle;width:108px;height:46px;object-fit:cover;border-radius:999px;margin:0 6px}
+/* schedule */
+.tabs{display:inline-flex;flex-wrap:wrap;justify-content:center;gap:4px;padding:5px;border-radius:999px;background:var(--sand);margin:28px 0 36px}
+.tabs button{min-height:44px;padding:0 18px;border:0;border-radius:999px;background:transparent;color:var(--forest);font:400 13px var(--sans);cursor:pointer;transition:background-color .3s,color .3s}
+.tabs button[aria-selected=true]{background:var(--forest);color:var(--cream)}
+.slots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;text-align:left}
+.slot{display:flex;align-items:center;gap:18px;text-align:left;padding:10px 22px 10px 10px;border-radius:999px;background:var(--paper);text-decoration:none;border:1px solid transparent;transition:border-color .3s,transform .4s var(--ease);cursor:pointer;font:inherit;color:inherit;width:100%}
+.slot:hover{border-color:var(--line);transform:translateY(-2px)}
+.slot img{width:88px;height:88px;border-radius:50%;object-fit:cover;flex:none}
+.slot b{display:block;font-weight:400;font-size:14px}
+.slot strong{display:block;font-weight:400;font-size:15px;letter-spacing:.08em}
+.slot small{display:block;font-size:13px;color:var(--muted)}
+.slot.full{opacity:.62;cursor:not-allowed}
+/* studio */
+.studio{position:relative;height:clamp(380px,46vw,640px)}
+.studio .big{position:absolute;left:0;top:0;width:80%;height:100%;object-fit:cover;border-radius:40px clamp(140px,22vw,320px) 40px 40px}
+.studio .side{position:absolute;right:0;top:11%;width:18.5%;height:78%;object-fit:cover;object-position:60% 30%}
+/* features (pinned) */
+.feat{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px 80px;align-items:center}
+.flist{display:grid;gap:22px;border-left:1px solid var(--line);padding-left:26px;margin-top:40px}
+.fi{position:relative;transition:color .4s}
+.fi::before{content:"";position:absolute;left:-28px;top:2px;width:3px;height:44px;background:var(--forest);transform:scaleY(0);transform-origin:top;transition:transform .5s var(--ease)}
+.fi h3{font-size:17px;font-weight:400;letter-spacing:.1em;color:var(--soft);transition:color .4s}
+.fi p{font-size:14px;color:var(--muted);margin-top:2px}
+.fi.on::before{transform:scaleY(1)}.fi.on h3{color:var(--forest)}
+.fstack{position:relative;height:clamp(440px,44vw,640px);overflow:hidden;background:var(--sand)}
+.fstack img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.06);transition:opacity .8s var(--ease),transform 1.4s var(--ease)}
+.fstack img.on{opacity:1;transform:none}
+/* membership */
+.mem{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:12px;margin-top:32px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:120px;padding:18px 34px;border-radius:30px;background:var(--sand)}
+.row .eyebrow{font-size:11px;color:var(--muted)}
+.row h3{font-size:19px;font-weight:400;margin-top:4px}
+.row .amt{font-size:clamp(26px,2.6vw,34px);font-weight:300;white-space:nowrap}
+.row.dark{background:var(--forest);color:var(--cream)}.row.dark .eyebrow{color:var(--pale)}
+.row.light{background:var(--paper);border:1px solid #E2DCCF}
+.row .r{display:flex;align-items:center;gap:20px}
+.mimg{width:100%;height:120px;object-fit:cover;border-radius:30px}
+.s7{grid-column:span 7}.s5{grid-column:span 5}.s4{grid-column:span 4}.s8{grid-column:span 8}
+.note{font-size:13px;color:var(--muted);margin-top:18px}
+/* footer */
+footer{background:var(--forest);color:var(--cream);padding:clamp(88px,10vw,120px) var(--pad) 30px;overflow:hidden}
+.fgrid{max-width:1360px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:48px 72px;align-items:stretch}
+.finfo{display:grid;gap:26px;align-content:start}
+.finfo .eyebrow{color:var(--pale)}
+.finfo p.v{font-size:18px;margin-top:4px}
+.hours{display:grid;grid-template-columns:auto auto;gap:2px 24px;justify-content:start;font-size:17px;margin-top:4px;font-variant-numeric:tabular-nums}
+.map{position:relative;min-height:400px;overflow:hidden;background:var(--forest2)}
+.map img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.8)}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.map .btn{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);background:var(--cream);color:var(--forest)}
+.fword{margin:90px 0 0;font:300 clamp(104px,23vw,330px)/.8 var(--wide);text-align:center;color:var(--forest2);display:flex;justify-content:center;overflow:hidden}
+.fword span{display:inline-block}
+.frow{max-width:1360px;margin:26px auto 0;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:13px;color:var(--pale)}
+/* whatsapp float */
+.wa{position:fixed;right:20px;bottom:20px;z-index:55;display:inline-flex;align-items:center;gap:10px;min-height:56px;padding:0 22px 0 18px;border-radius:999px;background:#25D366;color:#0B3D24;font:500 15px/1 var(--sans);text-decoration:none;box-shadow:0 14px 34px rgb(11 61 36 / .3);transform:translateY(130px);transition:transform .6s var(--ease)}
+.wa.show,.wa:focus-visible{transform:none}.wa svg{width:26px;height:26px;flex:none}
+/* booking sheet */
+.bk{position:fixed;inset:0;z-index:100;display:none;align-items:flex-end;justify-content:center;background:rgb(20 30 22 / .55);backdrop-filter:blur(4px)}
+.bk.open{display:flex}
+.sheet{width:min(480px,100%);max-height:92svh;display:flex;flex-direction:column;background:var(--cream);border-radius:28px 28px 0 0;animation:up .5s var(--ease)}
+@media (min-width:700px){.bk{align-items:center}.sheet{border-radius:28px;max-height:86svh}}
+@keyframes up{from{transform:translateY(40px);opacity:0}}
+.sh-top{padding:16px 20px 0;display:grid;gap:14px}
+.sh-bar{display:flex;align-items:center;justify-content:space-between}
+.icon-btn{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--paper);color:var(--forest);display:grid;place-items:center;cursor:pointer}
+.prog{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}.prog i{height:4px;border-radius:4px;background:var(--line)}.prog i.on{background:var(--forest)}
+.sh-body{flex:1;overflow-y:auto;padding:22px 20px 20px}
+.sh-body h2{font-weight:300;font-size:24px;letter-spacing:.1em;line-height:1.25}
+.sh-body .sub{margin:6px 0 18px}
+.opt{display:flex;align-items:center;gap:14px;width:100%;padding:10px 14px 10px 10px;margin-bottom:10px;border-radius:18px;border:1.5px solid var(--line);background:var(--paper);color:var(--forest);font:inherit;text-align:left;cursor:pointer}
+.opt[aria-checked=true]{border-color:var(--forest);background:#fff}
+.opt img{width:60px;height:60px;border-radius:12px;object-fit:cover;flex:none}
+.opt b{display:block;font-weight:400;font-size:16px}.opt small{display:block;font-size:13px;color:var(--muted)}
+.days{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px}
+.chip{flex:none;width:58px;height:72px;border-radius:16px;border:1px solid var(--line);background:var(--paper);color:var(--forest);display:flex;flex-direction:column;align-items:center;justify-content:center;font:inherit;cursor:pointer}
+.chip span{font-size:12px}.chip b{font-size:19px;font-weight:400}
+.chip[aria-checked=true]{background:var(--forest);color:var(--cream);border-color:var(--forest)}
+.times{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.time{height:54px;border-radius:14px;border:1px solid var(--line);background:var(--paper);color:var(--forest);font:400 16px var(--sans);cursor:pointer}
+.time[aria-checked=true]{background:var(--forest);color:var(--cream)}
+.time:disabled{background:var(--sand);color:#7E8275;cursor:not-allowed;text-decoration:line-through}
+.fld{display:grid;gap:8px;font-size:14px;font-weight:400;margin-bottom:16px}
+.fld input,.fld textarea{min-height:52px;padding:12px 16px;border-radius:14px;border:1px solid var(--line);background:var(--paper);font:300 16px var(--sans);color:var(--forest);resize:none}
+.fld input[aria-invalid=true]{border-color:#9C3B2E}
+.err{font-size:13px;color:#9C3B2E}
+.chk{display:flex;align-items:center;gap:12px;min-height:52px;padding:0 16px;border-radius:14px;border:1px solid var(--line);background:var(--paper);font-size:15px;margin-bottom:16px;cursor:pointer}
+.chk input{width:20px;height:20px;accent-color:var(--forest)}
+.sum{border-radius:20px;overflow:hidden;background:var(--forest);color:var(--cream)}
+.sum img{width:100%;height:140px;object-fit:cover}.sum div{padding:16px 20px 18px;display:grid;gap:4px}.sum b{font-weight:400;font-size:20px}.sum span{color:#D7DCC8;font-size:15px}
+.msg{margin-top:18px;padding:14px 16px;border-radius:16px 16px 4px 16px;background:#DCF8C6;color:#0B3D24;font-size:15px;white-space:pre-line}
+.sh-foot{padding:14px 20px 22px;border-top:1px solid var(--line)}
+.sh-foot .btn{width:100%;min-height:56px;font-size:16px}
+.sh-foot .btn:disabled{background:#A7AC9D;color:var(--cream);cursor:not-allowed;transform:none}
+.wa-btn{background:#25D366;color:#0B3D24;font-weight:500}
+@media (max-width:1000px){
+.links,.nav-cta .btn-ghost{display:none}.menu-btn{display:grid;place-items:center}
+header.open{background:var(--cream);color:var(--forest)}
+header.open .links{display:grid;position:absolute;top:84px;left:0;right:0;background:var(--cream);padding:8px var(--pad) 24px;box-shadow:0 20px 30px rgb(0 0 0 / .1)}
+header.open .links a{font-size:20px;padding:14px 0;border-radius:0;border-bottom:1px solid var(--line)}
+.slots{grid-template-columns:minmax(0,1fr)}
+.feat,.fgrid{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:760px){
+.bento{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:200px}
+.tile.tall{grid-column:span 2;grid-row:span 2}
+.hero-labels .mid{display:none}
+.pill{width:72px;height:34px}
+.studio .big{width:100%;border-radius:28px 120px 28px 28px}.studio .side{display:none}
+.s7,.s5,.s4,.s8{grid-column:span 12}.mimg{height:100px}
+.row{padding:18px 22px}.row .r{gap:12px}
+.wa span{display:none}.wa{width:58px;padding:0;justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){.btn,.wa,.tile img,.fstack img,.fi::before{transition:none}.sheet{animation:none}.mani .w{opacity:1}}
+</style>
+</head>
+<body>
+<a class="btn btn-dark skip" href="#icerik">İçeriğe geç</a>
+<header id="hdr">
+<nav class="nav" aria-label="Ana menü">
+<a class="logo" href="#top"><svg viewBox="0 0 24 24" fill="none" stroke="#D3DDA4" stroke-width="1.6" aria-hidden="true"><path d="M5 21V11a7 7 0 0 1 14 0v10"/><path d="M9 21v-8a3 3 0 0 1 6 0v8"/></svg>nefes</a>
+<ul class="links" id="links">
+<li><a href="#dersler">Dersler</a></li>
+<li><a href="#program">Program</a></li>
+<li><a href="#studyo">Stüdyo</a></li>
+<li><a href="#uyelik">Üyelik</a></li>
+<li><a href="#iletisim">İletişim</a></li>
+</ul>
+<div class="nav-cta">
+<button class="btn btn-sage js-book" type="button">Ders ayırt</button>
+<a class="btn btn-ghost" href="#dersler">Dersleri keşfet</a>
+<button class="menu-btn" id="menuBtn" type="button" aria-label="Menüyü aç" aria-expanded="false" aria-controls="links"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 9h16M4 15h16"/></svg></button>
+</div>
+</nav>
+</header>
+
+<main id="icerik">
+<section class="hero" id="top">
+<img class="ph base" src="img/hero.webp" width="1244" height="1759" alt="Kemerli aynaların önünde reformerda kolunu uzatan kadın" fetchpriority="high">
+<img class="ph ghost" src="img/hero.webp" width="1244" height="1759" alt="" aria-hidden="true">
+<div class="shade"></div>
+<div class="hero-foot">
+<div class="hero-labels"><span>REFORMER PİLATES</span><span class="mid">KÜÇÜK SINIFLAR · MAX. 6 KİŞİ</span><span>BİLİNÇLİ HAREKET</span></div>
+<h1 class="word" aria-label="nefes reformer pilates stüdyosu"><span aria-hidden="true">n</span><span aria-hidden="true">e</span><span aria-hidden="true">f</span><span aria-hidden="true">e</span><span aria-hidden="true">s</span></h1>
+</div>
+</section>
+
+<section class="wrap" id="dersler" style="padding-top:clamp(88px,9vw,120px);padding-bottom:clamp(88px,9vw,120px)">
+<div class="center"><h2 class="h2 up">PRATİĞİNİ BUL</h2><p class="sub up">Her seviyeye ve her ritme göre dört ders. Hangisiyle başlayacağını birlikte seçelim.</p></div>
+<div class="bento">
+<a class="tile tall arch js-book" href="#" data-cls="temel"><img src="img/legs.webp" width="1148" height="1625" loading="lazy" style="object-position:50% 30%" alt="Kayışlarla bacaklarını yukarı uzatan kadın"><span class="bar"><b>Temel Reformer</b><i>BAŞLANGIÇ</i></span></a>
+<a class="tile js-book" href="#" data-cls="akis"><img src="img/plank.webp" width="1307" height="924" loading="lazy" alt="Reformerda plank yapan kadın"><span class="tl" style="left:22px;top:18px">Akış</span></a>
+<a class="tile tall js-book" href="#" data-cls="birebir"><img src="img/arch.webp" width="1244" height="1759" loading="lazy" alt="Işıklı kemerlerin önünde reformerda çalışan kadın"><span class="tl" style="right:22px;top:18px">Birebir</span></a>
+<a class="tile js-book" href="#" data-cls="duet"><img src="img/kneel.webp" width="1148" height="1625" loading="lazy" style="object-position:50% 40%" alt="Reformerda dizleri üzerinde çalışan kadın"><span class="tl" style="left:22px;bottom:18px">Düet</span></a>
+</div>
+</section>
+
+<section class="mani" aria-label="Felsefemiz">
+<p class="eyebrow">BİLİNÇLİ HAREKET</p>
+<p class="txt" id="mani"><span class="sr">Küçük sınıflar, yumuşak ışık ve seni adınla tanıyan eğitmenler. Bedenine iyi gelen bir saat.</span><span aria-hidden="true" class="w">KÜÇÜK</span> <span aria-hidden="true" class="w">SINIFLAR</span> <img class="pill" src="img/plank.webp" alt="" loading="lazy"> <span aria-hidden="true" class="w">YUMUŞAK</span> <span aria-hidden="true" class="w">IŞIK</span> <span aria-hidden="true" class="w">VE</span> <span aria-hidden="true" class="w">SENİ</span> <span aria-hidden="true" class="w">ADINLA</span> <span aria-hidden="true" class="w">TANIYAN</span> <span aria-hidden="true" class="w">EĞİTMENLER</span> <img class="pill" src="img/arch.webp" alt="" loading="lazy" style="object-position:50% 30%"> <span aria-hidden="true" class="w">BEDENİNE</span> <span aria-hidden="true" class="w">İYİ</span> <span aria-hidden="true" class="w">GELEN</span> <span aria-hidden="true" class="w">BİR</span> <span aria-hidden="true" class="w">SAAT.</span></p>
+</section>
+
+<section class="wrap center" id="program" style="padding-top:clamp(88px,9vw,120px);padding-bottom:clamp(88px,9vw,120px)">
+<h2 class="h2 up">HAFTALIK PROGRAM</h2>
+<p class="sub up">Sabah erken, öğle arası ya da akşam; rutinine uyan saati seç.</p>
+<div class="tabs up" role="tablist" aria-label="Gün" id="tabs"></div>
+<div class="slots" id="slots" role="tabpanel" aria-live="polite"></div>
+<p class="note">Doluluk örnek veridir; gerçek durumu stüdyo WhatsApp'tan onaylar.</p>
+</section>
+
+<section class="wrap" id="studyo" aria-label="Stüdyo">
+<div class="studio">
+<img class="big" src="img/studio.webp" width="1372" height="885" loading="lazy" alt="Ahşap reformerların sıralandığı, geniş pencereli stüdyo">
+<img class="side arch" src="img/arch.webp" width="1244" height="1759" loading="lazy" alt="Arkası aydınlatılmış kemerli aynalar">
+</div>
+</section>
+
+<section id="ozellik" style="padding:clamp(96px,10vw,130px) 0">
+<div class="wrap feat">
+<div>
+<h2 class="h2 up">HER GÜNÜN<br>İÇİN TASARLANDI</h2>
+<div class="flist" id="flist">
+<div class="fi on"><h3>KÜÇÜK SINIFLAR</h3><p>En fazla altı kişi; eğitmenin her hareketini görür.</p></div>
+<div class="fi"><h3>IŞIKLI BİR STÜDYO</h3><p>Kemerler, yumuşak ışık ve her ders sonrası temizlenen aletler.</p></div>
+<div class="fi"><h3>SANA GÖRE PROGRAM</h3><p>İlk derste duruş gözlemi; yaylar seviyene göre ayarlanır.</p></div>
+<div class="fi"><h3>ESNEK SAATLER</h3><p>Sabah 08:00'den akşam 19:15'e; 12 saat önceden ücretsiz erteleme.</p></div>
+</div>
+</div>
+<div class="fstack arch" id="fstack">
+<img class="on" src="img/kneel.webp" width="1148" height="1625" loading="lazy" style="object-position:50% 20%" alt="Kayışlarla çalışan kadın, arkada halka ve toplar">
+<img src="img/hero.webp" width="1244" height="1759" loading="lazy" style="object-position:50% 25%" alt="Işıklı kemerli aynalar ve tavan kirişleri">
+<img src="img/plank.webp" width="1307" height="924" loading="lazy" alt="Reformerda kontrollü plank hareketi">
+<img src="img/legs.webp" width="1148" height="1625" loading="lazy" style="object-position:50% 25%" alt="Kayışlarla bacak çalışması">
+</div>
+</div>
+</section>
+
+<section class="wrap" id="uyelik" style="padding-bottom:clamp(96px,10vw,130px)">
+<h2 class="h2 up">ÜYELİK</h2>
+<p class="sub up">Ritmine uyan seçeneği seç; gizli ücret yok.</p>
+<div class="mem">
+<div class="row s7"><div><p class="eyebrow">İLK ADIM</p><h3>Deneme dersi</h3></div><div class="r"><p class="amt">750 ₺</p><button class="btn btn-dark js-book" type="button">Ayırt</button></div></div>
+<img class="mimg s5" src="img/plank.webp" loading="lazy" style="object-position:50% 70%" alt="">
+<img class="mimg s4" src="img/legs.webp" loading="lazy" style="object-position:50% 55%" alt="">
+<div class="row dark s8"><div><p class="eyebrow">EN ÇOK TERCİH EDİLEN</p><h3>Aylık 8 ders</h3></div><div class="r"><p class="amt">4.800 ₺<small style="font-size:15px"> /ay</small></p><button class="btn btn-sage js-book" type="button">Seç</button></div></div>
+<div class="row light s8"><div><p class="eyebrow">ÖZEL DERS</p><h3>Birebir · 5 ders</h3></div><div class="r"><p class="amt">7.500 ₺</p><button class="btn btn-dark js-book" type="button" data-cls="birebir">Bilgi al</button></div></div>
+<img class="mimg s4" src="img/studio.webp" loading="lazy" style="object-position:50% 80%" alt="">
+</div>
+<p class="note">Örnek içerik: marka adı, fiyatlar, doluluk ve adres temsilidir. Fotoğraflar Unsplash lisanslıdır; yayından önce stüdyonun kendi fotoğraflarıyla değiştirilmesi önerilir.</p>
+</section>
+</main>
+
+<footer id="iletisim">
+<div class="fgrid">
+<div class="finfo">
+<h2 class="h2 up">BİR ÇAY İÇMEYE GEL</h2>
+<div class="up"><p class="eyebrow">ADRES</p><p class="v" id="addrText">Bahçelievler Mah. Ihlamur Sok. No: 12, Kat 2</p></div>
+<div class="up"><p class="eyebrow">TELEFON</p><p class="v"><a id="telText" href="#">0 500 000 00 00</a></p></div>
+<div class="up"><p class="eyebrow">SAATLER</p><div class="hours"><span>Hafta içi</span><span>07:30–21:00</span><span>Cumartesi</span><span>08:30–14:00</span><span>Pazar</span><span>Kapalı</span></div></div>
+<div class="up" style="display:flex;flex-wrap:wrap;gap:10px"><a class="btn btn-sage js-wa" href="#">WhatsApp'tan yaz</a><a class="btn btn-ghost" id="dirLink" href="#" target="_blank" rel="noopener">Yol tarifi al</a></div>
+</div>
+<div class="map arch up" id="map"><img src="img/studio.webp" loading="lazy" alt=""><button class="btn" id="loadMap" type="button">Haritayı göster</button></div>
+</div>
+<p class="fword" aria-hidden="true"><span>n</span><span>e</span><span>f</span><span>e</span><span>s</span></p>
+<div class="frow"><span>© <span id="yr">2026</span> Nefes Reformer Studio</span><span>Instagram @nefes.studio</span></div>
+</footer>
+
+<a class="wa js-wa" id="waFloat" href="#" aria-label="WhatsApp'tan yaz"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.2-.3-.2-.5-.3Z"/></svg><span>WhatsApp'tan yaz</span></a>
+
+<div class="bk" id="bk" role="dialog" aria-modal="true" aria-labelledby="bkTitle">
+<div class="sheet">
+<div class="sh-top">
+<div class="sh-bar"><button class="icon-btn" id="bkBack" type="button" aria-label="Önceki adım"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button><span id="bkStep" style="font-size:14px;color:var(--muted)">Adım 1 / 4</span><button class="icon-btn" id="bkClose" type="button" aria-label="Kapat"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+<div class="prog" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+</div>
+<div class="sh-body" id="bkBody"></div>
+<div class="sh-foot" id="bkFoot"></div>
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+{
+/* === Stüdyo bilgileri: yayından önce yalnızca burayı değiştir === */
+const CONFIG = {
+  whatsapp: '900000000000',
+  phoneText: '0 500 000 00 00',
+  address: 'Bahçelievler Mah. Ihlamur Sok. No: 12, Kat 2',
+  mapQuery: 'Bahçelievler Mah. Ihlamur Sok. No: 12',
+  studio: 'Nefes Reformer Studio'
+};
+const CLASSES = [
+  { id: 'temel', name: 'Temel Reformer', level: 'Başlangıç', meta: 'Başlangıç · 50 dk · Max. 6 kişi', img: 'img/plank.webp', times: ['08:00', '12:30', '19:15'] },
+  { id: 'akis', name: 'Akış', level: 'Orta seviye', meta: 'Orta seviye · 50 dk · Max. 6 kişi', img: 'img/hero.webp', times: ['10:00', '18:00'] },
+  { id: 'birebir', name: 'Birebir özel ders', level: 'Her seviye', meta: 'Her seviye · 50 dk · 1 kişi', img: 'img/legs.webp', times: ['09:00', '11:00', '14:00', '16:00', '20:00'] },
+  { id: 'duet', name: 'Düet', level: 'Her seviye', meta: 'Her seviye · 50 dk · 2 kişi', img: 'img/kneel.webp', times: ['09:00', '14:00', '17:00'] }
+];
+const DOW = ['Paz', 'Pzt', 'Sal', 'Çar', 'Per', 'Cum', 'Cmt'], LONG = ['Pazar', 'Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi'];
+const MON = ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'];
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const wa = text => 'https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent(text);
+const byId = id => CLASSES.find(c => c.id === id);
+/* örnek doluluk: gün ve saate göre sabit */
+const left = (dayIdx, t) => [4, 2, 0, 3, 5, 1][(dayIdx * 7 + parseInt(t)) % 6];
+
+$$('.js-wa').forEach(a => { a.href = wa('Merhaba, reformer pilates dersleri hakkında bilgi almak istiyorum.'); a.target = '_blank'; a.rel = 'noopener'; });
+$('#telText').textContent = CONFIG.phoneText; $('#telText').href = 'tel:+' + CONFIG.whatsapp;
+$('#addrText').textContent = CONFIG.address;
+$('#dirLink').href = 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(CONFIG.mapQuery);
+$('#yr').textContent = new Date().getFullYear();
+$('#loadMap').addEventListener('click', () => {
+  const f = document.createElement('iframe');
+  f.title = 'Stüdyo konumu'; f.loading = 'lazy'; f.referrerPolicy = 'no-referrer-when-downgrade';
+  f.src = 'https://www.google.com/maps?q=' + encodeURIComponent(CONFIG.mapQuery) + '&output=embed';
+  $('#map').append(f); $('#loadMap').remove();
+});
+
+/* menü ve başlık */
+const hdr = $('#hdr'), mb = $('#menuBtn'), waF = $('#waFloat');
+const setMenu = o => { hdr.classList.toggle('open', o); mb.setAttribute('aria-expanded', o); mb.setAttribute('aria-label', o ? 'Menüyü kapat' : 'Menüyü aç'); };
+mb.addEventListener('click', () => setMenu(!hdr.classList.contains('open')));
+$$('#links a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+const onScroll = () => { const y = scrollY, h = $('.hero').offsetHeight; hdr.classList.toggle('solid', y > h - 90); waF.classList.toggle('show', y > h * .8); };
+addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+/* program sekmeleri */
+const weekDays = [1, 2, 3, 4, 5, 6];
+const SCHED = { weekday: [['08:00', 'temel'], ['10:00', 'akis'], ['12:30', 'temel'], ['18:00', 'akis'], ['19:15', 'temel']], sat: [['08:30', 'akis'], ['10:00', 'temel'], ['12:30', 'birebir']] };
+let curDay = Math.max(0, weekDays.indexOf(new Date().getDay()));
+function renderSched() {
+  $('#tabs').innerHTML = weekDays.map((d, i) => `<button type="button" role="tab" id="tab${i}" aria-selected="${i === curDay}" tabindex="${i === curDay ? 0 : -1}">${DOW[d]}</button>`).join('');
+  const list = weekDays[curDay] === 6 ? SCHED.sat : SCHED.weekday;
+  $('#slots').setAttribute('aria-labelledby', 'tab' + curDay);
+  $('#slots').innerHTML = list.map(([t, id]) => { const c = byId(id), n = left(curDay, t), full = n === 0;
+    return `<button type="button" class="slot${full ? ' full' : ''}" ${full ? 'aria-disabled="true"' : ''} data-cls="${id}" data-time="${t}" data-day="${curDay}"><img src="${c.img}" alt="" loading="lazy" style="object-position:50% ${id === 'akis' ? '85%' : '30%'}"><span><b>${t}</b><strong>${esc(c.name.toLocaleUpperCase('tr'))}</strong><small>${c.level} · ${full ? 'dolu' : n + ' yer kaldı'}</small></span></button>`; }).join('');
+}
+$('#tabs').addEventListener('click', e => { const b = e.target.closest('[role=tab]'); if (!b) return; curDay = +b.id.slice(3); renderSched(); $('#tab' + curDay).focus(); });
+$('#tabs').addEventListener('keydown', e => { if (!['ArrowLeft', 'ArrowRight'].includes(e.key)) return; curDay = (curDay + (e.key === 'ArrowRight' ? 1 : weekDays.length - 1)) % weekDays.length; renderSched(); $('#tab' + curDay).focus(); });
+$('#slots').addEventListener('click', e => { const s = e.target.closest('.slot'); if (!s || s.classList.contains('full')) return; openBk({ cls: s.dataset.cls, time: s.dataset.time, weekday: weekDays[+s.dataset.day] }); });
+renderSched();
+
+/* ayırtma paneli */
+const bk = $('#bk'), body = $('#bkBody'), foot = $('#bkFoot');
+let S, lastFocus;
+function dates() { const out = [], d0 = new Date(); for (let i = 1; out.length < 6; i++) { const d = new Date(d0.getFullYear(), d0.getMonth(), d0.getDate() + i); if (d.getDay()) out.push(d); } return out; }
+function openBk(pre = {}) {
+  const ds = dates();
+  S = { step: pre.cls ? (pre.time ? 3 : 2) : 1, cls: pre.cls || null, day: 0, time: pre.time || null, name: '', phone: '', first: true, note: '', tried: false, ds };
+  if (pre.weekday != null) { const i = ds.findIndex(d => d.getDay() === pre.weekday); S.day = i < 0 ? 0 : i; }
+  lastFocus = document.activeElement; bk.classList.add('open'); document.documentElement.style.overflow = 'hidden'; if (window.__lenis) __lenis.stop();
+  draw(); setTimeout(() => $('#bkClose').focus(), 30);
+}
+function closeBk() { bk.classList.remove('open'); document.documentElement.style.overflow = ''; if (window.__lenis) __lenis.start(); if (lastFocus) lastFocus.focus(); }
+function when() { const d = S.ds[S.day]; return d && S.time ? `${LONG[d.getDay()]}, ${d.getDate()} ${MON[d.getMonth()]} · ${S.time}` : ''; }
+function msg() { const c = byId(S.cls); return `Merhaba, ben ${S.name.trim()}. ${c ? c.name : ''} için ${when()} dersine yer ayırtmak istiyorum.` + (S.first ? '\nİlk kez reformer deneyeceğim.' : '') + (S.note.trim() ? '\nNot: ' + S.note.trim() : '') + '\nTelefon: ' + S.phone.trim(); }
+function draw() {
+  $('#bkStep').textContent = `Adım ${S.step} / 4`;
+  $$('.prog i').forEach((b, i) => b.classList.toggle('on', i < S.step));
+  $('#bkBack').style.visibility = S.step > 1 ? 'visible' : 'hidden';
+  const c = byId(S.cls);
+  if (S.step === 1) {
+    body.innerHTML = `<h2 id="bkTitle">HANGİ DERS?</h2><p class="sub">Emin değilsen Temel Reformer ile başla.</p><div role="radiogroup" aria-label="Ders">` + CLASSES.map(k => `<button type="button" class="opt" role="radio" aria-checked="${k.id === S.cls}" data-id="${k.id}"><img src="${k.img}" alt=""><span><b>${k.name}</b><small>${k.meta}</small></span></button>`).join('') + `</div>`;
+    foot.innerHTML = `<button class="btn btn-dark" id="bkNext" type="button" ${S.cls ? '' : 'disabled'}>${S.cls ? 'Devam et' : 'Bir ders seç'}</button>`;
+  } else if (S.step === 2) {
+    const sat = S.ds[S.day].getDay() === 6, times = c.times.filter(t => !sat || t < '14:00');
+    body.innerHTML = `<h2 id="bkTitle">NE ZAMAN?</h2><p class="sub">${c.name} için uygun saatler.</p><div class="days" role="radiogroup" aria-label="Gün">` + S.ds.map((d, i) => `<button type="button" class="chip" role="radio" aria-checked="${i === S.day}" data-day="${i}"><span>${DOW[d.getDay()]}</span><b>${d.getDate()}</b></button>`).join('') + `</div><p style="margin:20px 0 10px;font-size:14px;font-weight:400">Saat</p><div class="times" role="radiogroup" aria-label="Saat">` + times.map(t => { const full = left(S.day, t) === 0; return `<button type="button" class="time" role="radio" aria-checked="${t === S.time}" data-time="${t}" ${full ? 'disabled aria-label="' + t + ' dolu"' : ''}>${t}</button>`; }).join('') + `</div><p class="note">Doluluk örnek veridir; stüdyo onaylar.</p>`;
+    foot.innerHTML = `<button class="btn btn-dark" id="bkNext" type="button" ${S.time ? '' : 'disabled'}>${S.time ? 'Devam et' : 'Bir saat seç'}</button>`;
+  } else if (S.step === 3) {
+    const nOk = S.name.trim().length > 1, pOk = /^\d{10,12}$/.test(S.phone.replace(/\D/g, ''));
+    body.innerHTML = `<h2 id="bkTitle">SENİ TANIYALIM</h2><p class="sub">${esc(c.name)} · ${when()}</p>
+<label class="fld">Adın<input id="fName" name="name" autocomplete="given-name" value="${esc(S.name)}" placeholder="Örn. Elif…" aria-invalid="${S.tried && !nOk}">${S.tried && !nOk ? '<span class="err">Adını yazar mısın? Eğitmen seni adınla karşılasın.</span>' : ''}</label>
+<label class="fld">Telefon<input id="fPhone" name="tel" type="tel" inputmode="tel" autocomplete="tel" value="${esc(S.phone)}" placeholder="0532 123 45 67" aria-invalid="${S.tried && !pOk}">${S.tried && !pOk ? '<span class="err">Numaranı 10 hane olarak yaz: 0532 123 45 67</span>' : ''}</label>
+<label class="chk"><input type="checkbox" id="fFirst" ${S.first ? 'checked' : ''}>İlk kez reformer deneyeceğim</label>
+<label class="fld">Eğitmenin bilmesi gereken bir şey var mı? <span style="color:var(--muted)">İsteğe bağlı</span><textarea id="fNote" rows="3" placeholder="Örn. bel fıtığı geçmişim var…">${esc(S.note)}</textarea></label>`;
+    foot.innerHTML = `<button class="btn btn-dark" id="bkNext" type="button">Özeti gör</button>`;
+    $('#fName').oninput = e => S.name = e.target.value; $('#fPhone').oninput = e => S.phone = e.target.value;
+    $('#fFirst').onchange = e => S.first = e.target.checked; $('#fNote').oninput = e => S.note = e.target.value;
+    if (S.tried) (!nOk ? $('#fName') : $('#fPhone')).focus();
+  } else {
+    body.innerHTML = `<h2 id="bkTitle">NEREDEYSE HAZIR</h2><p class="sub">Mesajı WhatsApp'ta sen gönderirsin, stüdyo yerini onaylar.</p><div class="sum"><img src="${c.img}" alt=""><div><b>${esc(c.name)}</b><span>${when()}</span><span>${esc(CONFIG.studio)}</span></div></div><p style="margin:18px 0 0;font-size:14px;font-weight:400">Gönderilecek mesaj</p><div class="msg">${esc(msg())}</div>`;
+    foot.innerHTML = `<a class="btn wa-btn" href="${wa(msg())}" target="_blank" rel="noopener">WhatsApp'ta gönder</a>`;
+  }
+}
+body.addEventListener('click', e => {
+  const o = e.target.closest('.opt'); if (o) { S.cls = o.dataset.id; S.time = null; return draw(); }
+  const d = e.target.closest('.chip'); if (d) { S.day = +d.dataset.day; S.time = null; return draw(); }
+  const t = e.target.closest('.time'); if (t && !t.disabled) { S.time = t.dataset.time; return draw(); }
+});
+foot.addEventListener('click', e => {
+  if (!e.target.closest('#bkNext')) return;
+  if (S.step === 3) { const nOk = S.name.trim().length > 1, pOk = /^\d{10,12}$/.test(S.phone.replace(/\D/g, '')); if (!(nOk && pOk)) { S.tried = true; return draw(); } }
+  S.step++; S.tried = false; draw(); $('#bkTitle').setAttribute('tabindex', '-1'); $('#bkTitle').focus();
+});
+$('#bkBack').onclick = () => { if (S.step > 1) { S.step--; draw(); } };
+$('#bkClose').onclick = closeBk;
+bk.addEventListener('click', e => { if (e.target === bk) closeBk(); });
+document.addEventListener('keydown', e => {
+  if (!bk.classList.contains('open')) return;
+  if (e.key === 'Escape') closeBk();
+  if (e.key === 'Tab') { const f = [...bk.querySelectorAll('button:not([disabled]),a[href],input,textarea')].filter(x => x.offsetParent); if (!f.length) return; const a = f[0], z = f[f.length - 1]; if (e.shiftKey && document.activeElement === a) { e.preventDefault(); z.focus(); } else if (!e.shiftKey && document.activeElement === z) { e.preventDefault(); a.focus(); } }
+});
+$$('.js-book').forEach(b => b.addEventListener('click', e => { e.preventDefault(); setMenu(false); openBk({ cls: b.dataset.cls }); }));
+
+/* hareket */
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const words = $$('#mani .w');
+if (reduce || !window.gsap || !window.ScrollTrigger) { words.forEach(w => w.classList.add('on')); }
+else {
+  gsap.registerPlugin(ScrollTrigger);
+  if (window.Lenis) { const l = new Lenis({ duration: 1.15 }); window.__lenis = l; l.on('scroll', ScrollTrigger.update); gsap.ticker.add(t => l.raf(t * 1000)); gsap.ticker.lagSmoothing(0);
+    $$('a[href^="#"]').forEach(a => a.addEventListener('click', e => { const id = a.getAttribute('href'); if (id.length > 1 && $(id)) { e.preventDefault(); l.scrollTo(id, { offset: -84 }); } })); }
+  /* hero: harfler yükselir, fotoğraf yavaşça yakınlaşır */
+  gsap.from('.word span', { yPercent: 110, duration: 1.4, ease: 'expo.out', stagger: .07, delay: .15 });
+  gsap.from('.hero-labels span', { opacity: 0, y: 14, duration: 1, ease: 'expo.out', stagger: .1, delay: .5 });
+  gsap.fromTo('.hero .base', { scale: 1.14 }, { scale: 1, duration: 2.4, ease: 'expo.out' });
+  gsap.fromTo('.hero .ghost', { xPercent: -6, opacity: .7 }, { xPercent: -2.4, opacity: .45, duration: 2.6, ease: 'expo.out' });
+  gsap.to('.hero .ph', { yPercent: 12, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+  gsap.to('.word', { yPercent: -18, opacity: .3, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+  /* başlıklar ve satırlar süzülür */
+  const ups = gsap.utils.toArray('.up'); gsap.set(ups, { y: 40, opacity: 0 });
+  ScrollTrigger.batch(ups, { start: 'top 90%', once: true, onEnter: els => gsap.to(els, { y: 0, opacity: 1, duration: 1.1, ease: 'expo.out', stagger: .08, overwrite: true }) });
+  /* bento: kareler alttan perde gibi açılır */
+  gsap.set('.tile', { clipPath: 'inset(100% 0% 0% 0%)' });
+  ScrollTrigger.batch('.tile', { start: 'top 88%', once: true, onEnter: els => gsap.to(els, { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.3, ease: 'expo.inOut', stagger: .12 }) });
+  /* manifesto: kelimeler yanar, hap fotoğraflar açılır */
+  ScrollTrigger.create({ trigger: '#mani', start: 'top 80%', end: 'bottom 45%', scrub: true, onUpdate: s => { const n = Math.round(s.progress * words.length); words.forEach((w, i) => w.classList.toggle('on', i < n)); } });
+  gsap.from('.pill', { width: 0, marginLeft: 0, marginRight: 0, duration: 1.2, ease: 'expo.out', scrollTrigger: { trigger: '#mani', start: 'top 70%' } });
+  /* stüdyo: büyük fotoğraf açılır, kemer paralaks */
+  gsap.from('.studio .big', { clipPath: 'inset(0% 100% 0% 0% round 40px)', duration: 1.6, ease: 'expo.inOut', scrollTrigger: { trigger: '.studio', start: 'top 80%' } });
+  gsap.fromTo('.studio .side', { yPercent: 14 }, { yPercent: -14, ease: 'none', scrollTrigger: { trigger: '.studio', start: 'top bottom', end: 'bottom top', scrub: true } });
+  /* özellikler: masaüstünde bölüm sabitlenir, maddeler sırayla öne çıkar */
+  const fis = $$('.fi'), fims = $$('#fstack img');
+  const setF = i => { fis.forEach((f, k) => f.classList.toggle('on', k === i)); fims.forEach((m, k) => m.classList.toggle('on', k === i)); };
+  const mm = gsap.matchMedia();
+  mm.add('(min-width: 1001px)', () => { ScrollTrigger.create({ trigger: '#ozellik', start: 'top top', end: '+=' + innerHeight * 2.2, pin: true, scrub: true, onUpdate: s => setF(Math.min(fis.length - 1, Math.floor(s.progress * fis.length))) }); });
+  mm.add('(max-width: 1000px)', () => { fis.forEach((f, i) => ScrollTrigger.create({ trigger: f, start: 'top 65%', onEnter: () => setF(i), onEnterBack: () => setF(i) })); });
+  /* üyelik satırları iki yandan gelir */
+  $$('.mem > *').forEach((el, i) => gsap.from(el, { x: (i % 2 ? 1 : -1) * Math.min(60, innerWidth * .06), duration: 1.2, ease: 'expo.out', scrollTrigger: { trigger: el, start: 'top 92%' } }));
+  /* altbilgi logosu */
+  gsap.from('.fword span', { yPercent: 100, duration: 1.3, ease: 'expo.out', stagger: .06, scrollTrigger: { trigger: '.fword', start: 'top 95%' } });
+  addEventListener('load', () => ScrollTrigger.refresh());
+}
+}
+</script>
+</body>
+</html>
