@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>harman · Kahve ve Kavurmahane</title>
+<meta name="description" content="harman: küçük partiler halinde kavrulan specialty kahve, espresso bar, filtre demleme ve paket çekirdek. Paket kahveni WhatsApp'tan sipariş et.">
+<meta property="og:title" content="harman · Kahve ve Kavurmahane">
+<meta property="og:description" content="Küçük partiler halinde kavrulan çekirdekler, sabırla demlenen fincanlar.">
+<meta property="og:image" content="img/espresso.webp">
+<meta name="theme-color" content="#1A1310">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800&family=Hanken+Grotesk:wght@300;400;500;600&display=swap">
+<link rel="preload" as="image" href="img/espresso.webp" fetchpriority="high">
+<style>
+/* VOICE: sıcak, zanaatkâr, kendinden emin; mahalle kahvecisi ama kavurmahane titizliği
+   IDEA: fincan ve portafiltre: daire motifi; görseller daire ve hap biçimli çerçevelerde, dev HARMAN logosu fotoğrafa oturur
+   PICTURE: karartılmış espresso akışı; bento içecek kolajı; kavurma makinesi + daire tambur; sabitlenen çekirdekten fincana
+   COLOUR and TYPE: espresso + krem + crema vurgu; Big Shoulders Display (logo, başlık) + Hanken Grotesk (metin)
+   LAYOUT: tam ekran hero, bento, manifesto, sekmeli menü listesi, kavurmahane, sabitlenen süreç, paket kahve satırları, dev logolu altbilgi */
+:root{--esp:#1A1310;--esp2:#2A201B;--cream:#F1E9DF;--paper:#FAF6F0;--sand:#E6DCCF;--line:#D8CCBD;--crema:#E3B272;--muted:#5E5148;--pale:#B9A794;
+--disp:"Big Shoulders Display",Impact,"Arial Narrow",sans-serif;--sans:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;--ease:cubic-bezier(.22,1,.36,1);--pad:4vw}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:90px;overflow-x:clip}
+html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{margin:0;background:var(--cream);color:var(--esp);font:400 17px/1.6 var(--sans);overflow-x:clip;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3,p{margin:0}
+.wrap{max-width:1360px;margin:0 auto;padding:0 var(--pad)}
+.sec{padding:clamp(88px,9vw,130px) 0}
+.h2{font:700 clamp(44px,5.4vw,80px)/.92 var(--disp);letter-spacing:.005em;text-wrap:balance}
+.h2 em{font-style:normal;color:#9A5A22}
+footer .h2 em,.mani .h2 em{color:var(--crema)}
+.sub{font-size:17px;color:var(--muted);margin-top:14px;max-width:46ch}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.16em}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 24px;border-radius:999px;font:600 15px/1 var(--sans);text-decoration:none;border:1px solid transparent;cursor:pointer;white-space:nowrap;transition:transform .4s var(--ease),background-color .3s,color .3s;touch-action:manipulation}
+.btn:hover{transform:translateY(-2px)}
+.btn-crema{background:var(--crema);color:var(--esp)}
+.btn-dark{background:var(--esp);color:var(--cream)}
+.btn-ghost{border-color:rgb(241 233 223 / .55);color:var(--cream);background:transparent}
+.btn-ghost:hover{background:rgb(241 233 223 / .12)}
+.btn-line{border-color:var(--esp);color:var(--esp)}
+:focus-visible{outline:2px solid #C9893A;outline-offset:3px;border-radius:8px}
+.skip{position:absolute;left:-9999px;top:10px;z-index:200}.skip:focus{left:12px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.circle{border-radius:50%;aspect-ratio:1}
+/* header */
+header{position:fixed;inset:0 0 auto;z-index:60;color:var(--cream);transition:background-color .4s,color .4s,box-shadow .4s}
+header.solid{background:rgb(241 233 223 / .92);backdrop-filter:blur(14px);color:var(--esp);box-shadow:0 1px 0 var(--line)}
+header.solid .btn-ghost{border-color:var(--esp);color:var(--esp)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px;height:84px;max-width:1360px;margin:0 auto;padding:0 var(--pad)}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:800 28px/1 var(--disp);letter-spacing:.04em}
+.logo svg{width:24px;height:24px}
+.links{display:flex;gap:4px;list-style:none;margin:0;padding:0}
+.links a{display:block;padding:12px 14px;font-size:15px;font-weight:500;text-decoration:none;border-radius:999px}
+.links a:hover{background:rgb(201 137 58 / .16)}
+.nav-cta{display:flex;gap:8px}
+.menu-btn{display:none;width:44px;height:44px;border-radius:50%;border:1px solid currentColor;background:transparent;color:inherit;cursor:pointer}
+/* hero */
+.hero{position:relative;height:100svh;min-height:640px;max-height:1000px;overflow:hidden;background:var(--esp);color:var(--cream)}
+.hero .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 38%;filter:brightness(.55) saturate(.95)}
+.hero .shade{position:absolute;inset:0;background:radial-gradient(60% 50% at 50% 42%,transparent,rgb(26 19 16 / .35)),linear-gradient(180deg,rgb(26 19 16 / .6) 0%,transparent 30%,transparent 55%,rgb(26 19 16 / .95) 100%)}
+.hero-intro{position:absolute;left:var(--pad);top:clamp(130px,22vh,200px);max-width:380px}
+.hero-intro p{font-size:18px;line-height:1.55;color:#EDE2D4}
+.hero-intro .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.hero-foot{position:absolute;left:0;right:0;bottom:0;padding:0 var(--pad) 22px}
+.hero-labels{max-width:1360px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;font-size:12px;font-weight:600;letter-spacing:.16em;color:#E9DCCB}
+.word{margin:4px auto 0;max-width:1360px;font:800 clamp(120px,27vw,400px)/.78 var(--disp);letter-spacing:.01em;text-align:center;display:flex;justify-content:center;overflow:hidden;padding-top:.04em;text-transform:uppercase}
+.word span{display:inline-block;will-change:transform}
+/* bento */
+.head-row{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:20px 48px;margin-bottom:44px}
+.bento{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:clamp(180px,17vw,250px);gap:12px}
+.tile{position:relative;overflow:hidden;border-radius:30px;text-decoration:none;color:var(--cream);background:var(--sand)}
+.tile img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.tile:hover img{transform:scale(1.05)}
+.t-a{grid-column:span 2;grid-row:span 2}.t-b{grid-row:span 2;border-radius:999px}.t-c{grid-row:span 1}.t-d{grid-row:span 1}
+.tile .lab{position:absolute;left:0;right:0;bottom:0;padding:70px 24px 22px;background:linear-gradient(transparent,rgb(26 19 16 / .78));display:flex;justify-content:space-between;align-items:flex-end;gap:10px}
+.tile .lab b{font:700 30px/1 var(--disp);letter-spacing:.02em}
+.tile .lab i{font-style:normal;font-size:12px;font-weight:600;letter-spacing:.14em}
+.t-b .lab{justify-content:center;text-align:center;padding-bottom:42px;flex-direction:column;align-items:center}
+.tile .tag{position:absolute;left:18px;top:16px;font-size:14px;font-weight:600;letter-spacing:.06em;padding:8px 14px;border-radius:999px;background:rgb(26 19 16 / .55);backdrop-filter:blur(6px)}
+/* manifesto */
+.mani{background:var(--esp);color:var(--cream);padding:clamp(96px,11vw,150px) var(--pad);text-align:center}
+.mani .eyebrow{color:var(--pale);margin-bottom:28px}
+.mani .txt{max-width:1180px;margin:0 auto;font:700 clamp(40px,5.4vw,84px)/1.08 var(--disp);letter-spacing:.01em;text-transform:uppercase}
+.mani .w{opacity:.18;transition:opacity .35s}.mani .w.on{opacity:1}
+.pill{display:inline-block;vertical-align:middle;width:1.9em;height:.9em;object-fit:cover;border-radius:999px;margin:0 .1em .12em}
+/* menu */
+.tabs{display:inline-flex;flex-wrap:wrap;gap:4px;padding:5px;border-radius:999px;background:var(--sand)}
+.tabs button{min-height:44px;padding:0 20px;border:0;border-radius:999px;background:transparent;color:var(--esp);font:600 14px var(--sans);cursor:pointer;transition:background-color .3s,color .3s}
+.tabs button[aria-selected=true]{background:var(--esp);color:var(--cream)}
+.menu{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.8fr);gap:48px 72px;align-items:start;margin-top:40px}
+.mlist{border-top:1px solid var(--line)}
+.mrow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 24px;padding:20px 0;border-bottom:1px solid var(--line)}
+.mrow h3{font:700 30px/1 var(--disp);letter-spacing:.02em;text-transform:uppercase}
+.mrow p{grid-column:1;font-size:15px;color:var(--muted)}
+.mrow .pr{grid-row:1/span 2;grid-column:2;align-self:center;font:700 30px/1 var(--disp);white-space:nowrap;font-variant-numeric:tabular-nums}
+.mphoto{position:sticky;top:110px}
+.mphoto .circle{width:100%;overflow:hidden;background:var(--sand);position:relative}
+.mphoto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .7s var(--ease)}
+.mphoto img.on{opacity:1}
+.mphoto p{text-align:center;margin-top:16px;font-size:14px;color:var(--muted)}
+/* roastery */
+.roast{position:relative;height:clamp(420px,48vw,680px)}
+.roast .big{position:absolute;left:0;top:0;width:78%;height:100%;object-fit:cover;border-radius:36px 36px clamp(160px,24vw,340px) 36px}
+.roast .disc{position:absolute;right:0;bottom:-6%;width:30%;object-fit:cover;border:10px solid var(--cream)}
+.roast .stamp{position:absolute;left:28px;top:26px;color:var(--cream);font:700 20px/1.1 var(--disp);letter-spacing:.08em;padding:12px 18px;border-radius:999px;background:rgb(26 19 16 / .5);backdrop-filter:blur(6px)}
+/* process (pinned) */
+.proc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px 80px;align-items:center}
+.plist{display:grid;gap:4px;margin-top:40px;counter-reset:s}
+.pi{display:grid;grid-template-columns:56px minmax(0,1fr);gap:2px 14px;padding:18px 0;border-top:1px solid var(--line);transition:opacity .4s;opacity:.42}
+.pi.on{opacity:1}
+.pi::before{counter-increment:s;content:"0" counter(s);grid-row:span 2;font:700 34px/1 var(--disp);color:#A6672A}
+.pi h3{font:700 28px/1 var(--disp);letter-spacing:.02em;text-transform:uppercase}
+.pi p{font-size:15px;color:var(--muted)}
+.pstack{position:relative;width:min(100%,600px);margin-left:auto;overflow:hidden;background:var(--sand)}
+.pstack img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.08) rotate(-4deg);transition:opacity .8s var(--ease),transform 1.4s var(--ease)}
+.pstack img.on{opacity:1;transform:none}
+.pring{position:absolute;inset:-14px;border:1px dashed #B9A794;border-radius:50%;pointer-events:none}
+.pwrap{position:relative;width:min(100%,600px);margin-left:auto}
+/* beans */
+.beans{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:12px;margin-top:36px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:18px;min-height:128px;padding:18px 18px 18px 34px;border-radius:999px;background:var(--sand)}
+.row .eyebrow{font-size:11px;color:var(--muted)}
+.row h3{font:700 30px/1 var(--disp);letter-spacing:.02em;text-transform:uppercase;margin-top:6px}
+.row .notes{font-size:14px;color:var(--muted);margin-top:4px}
+.row .r{display:flex;align-items:center;gap:16px}
+.row .amt{font:700 34px/1 var(--disp);white-space:nowrap}
+.row.dark{background:var(--esp);color:var(--cream)}.row.dark .eyebrow,.row.dark .notes{color:var(--pale)}
+.row.light{background:var(--paper);border:1px solid #E4D9CB}
+.bimg{width:100%;height:128px;object-fit:cover;border-radius:999px}
+.s7{grid-column:span 7}.s5{grid-column:span 5}.s4{grid-column:span 4}.s8{grid-column:span 8}
+.note{font-size:13px;color:var(--muted);margin-top:18px}
+/* footer */
+footer{background:var(--esp);color:var(--cream);padding:clamp(88px,10vw,120px) var(--pad) 28px;overflow:hidden}
+.fgrid{max-width:1360px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px 72px;align-items:center}
+.finfo{display:grid;gap:26px;align-content:start}
+.finfo .eyebrow{color:var(--pale)}
+.finfo p.v{font-size:19px;margin-top:4px}
+.hours{display:grid;grid-template-columns:auto auto;gap:2px 24px;justify-content:start;font-size:18px;margin-top:4px;font-variant-numeric:tabular-nums}
+.map{position:relative;width:min(100%,560px);margin-left:auto;overflow:hidden;background:var(--esp2)}
+.map img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:sepia(.35) brightness(.78)}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.map .btn{position:absolute;left:50%;bottom:16%;transform:translateX(-50%);background:var(--cream);color:var(--esp)}
+.fword{margin:80px 0 0;font:800 clamp(120px,27vw,400px)/.78 var(--disp);text-align:center;color:var(--esp2);display:flex;justify-content:center;overflow:hidden;text-transform:uppercase}
+.fword span{display:inline-block}
+.frow{max-width:1360px;margin:24px auto 0;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:14px;color:var(--pale)}
+/* whatsapp */
+.wa{position:fixed;right:20px;bottom:20px;z-index:55;display:inline-flex;align-items:center;gap:10px;min-height:56px;padding:0 22px 0 18px;border-radius:999px;background:#25D366;color:#0B3D24;font:600 15px/1 var(--sans);text-decoration:none;box-shadow:0 14px 34px rgb(11 61 36 / .3);transform:translateY(130px);transition:transform .6s var(--ease)}
+.wa.show,.wa:focus-visible{transform:none}.wa svg{width:26px;height:26px;flex:none}
+/* order sheet */
+.bk{position:fixed;inset:0;z-index:100;display:none;align-items:flex-end;justify-content:center;background:rgb(26 19 16 / .6);backdrop-filter:blur(4px)}
+.bk.open{display:flex}
+.sheet{width:min(480px,100%);max-height:92svh;display:flex;flex-direction:column;background:var(--cream);border-radius:28px 28px 0 0;animation:up .5s var(--ease)}
+@media (min-width:700px){.bk{align-items:center}.sheet{border-radius:28px;max-height:86svh}}
+@keyframes up{from{transform:translateY(40px);opacity:0}}
+.sh-top{padding:16px 20px 0;display:grid;gap:14px}
+.sh-bar{display:flex;align-items:center;justify-content:space-between}
+.icon-btn{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--paper);color:var(--esp);display:grid;place-items:center;cursor:pointer}
+.prog{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}.prog i{height:4px;border-radius:4px;background:var(--line)}.prog i.on{background:var(--esp)}
+.sh-body{flex:1;overflow-y:auto;padding:22px 20px 20px}
+.sh-body h2{font:700 36px/1 var(--disp);text-transform:uppercase;letter-spacing:.02em}
+.sh-body .sub{margin:8px 0 18px;font-size:15px}
+.opt{display:flex;align-items:center;gap:14px;width:100%;padding:10px 16px 10px 10px;margin-bottom:10px;border-radius:999px;border:1.5px solid var(--line);background:var(--paper);color:var(--esp);font:inherit;text-align:left;cursor:pointer}
+.opt[aria-checked=true]{border-color:var(--esp);background:#fff}
+.opt img{width:58px;height:58px;border-radius:50%;object-fit:cover;flex:none}
+.opt b{display:block;font:700 22px/1.05 var(--disp);text-transform:uppercase;letter-spacing:.02em}.opt small{display:block;font-size:13px;color:var(--muted)}
+.opt .p{margin-left:auto;font:700 22px var(--disp);white-space:nowrap}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{min-height:44px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:var(--paper);color:var(--esp);font:500 15px var(--sans);cursor:pointer}
+.chip[aria-checked=true]{background:var(--esp);color:var(--cream);border-color:var(--esp)}
+.qty{display:flex;align-items:center;gap:14px}
+.qty button{width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:var(--paper);font:500 22px var(--sans);color:var(--esp);cursor:pointer}
+.qty output{font:700 34px var(--disp);min-width:2ch;text-align:center}
+.lbl{display:block;margin:20px 0 10px;font-size:14px;font-weight:600}
+.fld{display:grid;gap:8px;font-size:14px;font-weight:600;margin-bottom:16px}
+.fld input,.fld textarea{min-height:52px;padding:12px 16px;border-radius:14px;border:1px solid var(--line);background:var(--paper);font:400 16px var(--sans);color:var(--esp);resize:none}
+.fld input[aria-invalid=true]{border-color:#9C3B2E}
+.err{font-size:13px;font-weight:400;color:#9C3B2E}
+.sum{border-radius:22px;overflow:hidden;background:var(--esp);color:var(--cream);display:flex;align-items:center;gap:16px;padding:14px}
+.sum img{width:84px;height:84px;border-radius:50%;object-fit:cover;flex:none}.sum b{display:block;font:700 26px/1 var(--disp);text-transform:uppercase}.sum span{display:block;color:#D9CBBB;font-size:14px}
+.msg{margin-top:18px;padding:14px 16px;border-radius:16px 16px 4px 16px;background:#DCF8C6;color:#0B3D24;font-size:15px;white-space:pre-line}
+.sh-foot{padding:14px 20px 22px;border-top:1px solid var(--line)}
+.sh-foot .btn{width:100%;min-height:56px;font-size:16px}
+.sh-foot .btn:disabled{background:#A99C90;color:var(--cream);cursor:not-allowed;transform:none}
+.wa-btn{background:#25D366;color:#0B3D24}
+@media (max-width:1000px){
+.links,.nav-cta .btn-ghost{display:none}.menu-btn{display:grid;place-items:center}
+header.open{background:var(--cream);color:var(--esp)}
+header.open .links{display:grid;position:absolute;top:84px;left:0;right:0;background:var(--cream);padding:8px var(--pad) 24px;box-shadow:0 20px 30px rgb(0 0 0 / .1)}
+header.open .links a{font-size:20px;padding:14px 0;border-radius:0;border-bottom:1px solid var(--line)}
+.menu,.proc,.fgrid{grid-template-columns:minmax(0,1fr)}
+.mphoto{display:none}
+.pwrap,.map{margin:0 auto}
+}
+@media (max-width:760px){
+.hero-intro{top:auto;bottom:calc(27vw + 76px);right:var(--pad)}
+.hero-intro p{font-size:16px}
+.hero-labels .mid{display:none}
+.bento{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:170px}
+.t-a{grid-column:span 2}.t-b{grid-row:span 2}
+.roast .big{width:100%;border-radius:28px 28px 120px 28px}.roast .disc{width:42%;right:-2%;bottom:-10%;border-width:6px}
+.s7,.s5,.s4,.s8{grid-column:span 12}
+.row{border-radius:30px;padding:18px 18px 18px 22px;flex-wrap:wrap}.bimg{height:96px}
+.mrow h3,.mrow .pr{font-size:26px}
+.wa span{display:none}.wa{width:58px;padding:0;justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){.btn,.wa,.tile img,.pstack img,.mphoto img,.pi{transition:none}.sheet{animation:none}.mani .w{opacity:1}}
+</style>
+</head>
+<body>
+<a class="btn btn-dark skip" href="#icerik">İçeriğe geç</a>
+<header id="hdr">
+<nav class="nav" aria-label="Ana menü">
+<a class="logo" href="#top"><svg viewBox="0 0 24 24" fill="none" stroke="#E3B272" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/></svg>HARMAN</a>
+<ul class="links" id="links">
+<li><a href="#icecekler">İçecekler</a></li>
+<li><a href="#menu">Menü</a></li>
+<li><a href="#kavurmahane">Kavurmahane</a></li>
+<li><a href="#cekirdek">Paket kahve</a></li>
+<li><a href="#iletisim">Ziyaret</a></li>
+</ul>
+<div class="nav-cta">
+<button class="btn btn-crema js-order" type="button">Kahve sipariş et</button>
+<a class="btn btn-ghost" href="#menu">Menüye bak</a>
+<button class="menu-btn" id="menuBtn" type="button" aria-label="Menüyü aç" aria-expanded="false" aria-controls="links"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 9h16M4 15h16"/></svg></button>
+</div>
+</nav>
+</header>
+
+<main id="icerik">
+<section class="hero" id="top">
+<img class="ph" src="img/espresso.webp" width="1244" height="1865" alt="Portafiltreden fincana akan espresso" fetchpriority="high">
+<div class="shade"></div>
+<div class="hero-intro">
+<p class="hi">Küçük partiler halinde kavrulan çekirdekler, sabırla demlenen fincanlar. Mahallenin kahvecisi, şehrin kavurmahanesi.</p>
+<div class="cta hi"><a class="btn btn-crema" href="#menu">Menüye bak</a><a class="btn btn-ghost js-wa" href="#">Yol tarifi</a></div>
+</div>
+<div class="hero-foot">
+<div class="hero-labels"><span>SPECIALTY KAHVE</span><span class="mid">HER HAFTA TAZE KAVRUM</span><span>07:30'DAN BERİ AÇIK</span></div>
+<h1 class="word" aria-label="harman kahve ve kavurmahane"><span aria-hidden="true">h</span><span aria-hidden="true">a</span><span aria-hidden="true">r</span><span aria-hidden="true">m</span><span aria-hidden="true">a</span><span aria-hidden="true">n</span></h1>
+</div>
+</section>
+
+<section class="wrap sec" id="icecekler">
+<div class="head-row"><div><p class="eyebrow up" style="color:var(--muted);margin-bottom:14px">BARDA BUGÜN</p><h2 class="h2 up">FİNCANINI SEÇ</h2></div><p class="sub up">Espresso bazlılardan yavaş demlemelere; her çekirdeğe en çok yakışan yöntemle.</p></div>
+<div class="bento">
+<a class="tile t-a" href="#menu" data-tab="0"><img src="img/latte.webp" width="1244" height="1555" loading="lazy" style="object-position:50% 30%" alt="Kahve çekirdeklerinin ortasında latte art'lı fincan"><span class="lab"><b>SÜTLÜLER</b><i>FLAT WHITE · LATTE · CORTADO</i></span></a>
+<a class="tile t-b" href="#menu" data-tab="1"><img src="img/cold.webp" width="1244" height="1866" loading="lazy" style="object-position:50% 45%" alt="Chemex filtresinde demlenen kahve"><span class="lab"><b>DEMLEME</b><i>V60 · CHEMEX</i></span></a>
+<a class="tile t-c" href="#menu" data-tab="0"><img src="img/espresso.webp" width="1244" height="1865" loading="lazy" style="object-position:50% 40%" alt="Akan espresso"><span class="tag">Espresso</span></a>
+<a class="tile t-d" href="#menu" data-tab="1"><img src="img/bar.webp" width="1344" height="896" loading="lazy" alt="French press, Aeropress, Chemex ve tadım fincanları"><span class="tag">Tadım masası</span></a>
+</div>
+</section>
+
+<section class="mani" aria-label="Felsefemiz">
+<p class="eyebrow">NEDEN HARMAN</p>
+<p class="txt" id="mani"><span class="sr">Küçük partiler halinde kavrulan çekirdekler, sabırla demlenen fincanlar ve adını bilen baristalar.</span><span aria-hidden="true" class="w">KÜÇÜK</span> <span aria-hidden="true" class="w">PARTİLERLE</span> <span aria-hidden="true" class="w">KAVRULAN</span> <img class="pill" src="img/drum.webp" alt="" loading="lazy"> <span aria-hidden="true" class="w">ÇEKİRDEKLER,</span> <span aria-hidden="true" class="w">SABIRLA</span> <span aria-hidden="true" class="w">DEMLENEN</span> <img class="pill" src="img/cold.webp" alt="" loading="lazy" style="object-position:50% 50%"> <span aria-hidden="true" class="w">FİNCANLAR</span> <span aria-hidden="true" class="w">VE</span> <span aria-hidden="true" class="w">ADINI</span> <span aria-hidden="true" class="w">BİLEN</span> <span aria-hidden="true" class="w">BARİSTALAR.</span></p>
+</section>
+
+<section class="wrap sec" id="menu">
+<div class="head-row"><div><p class="eyebrow up" style="color:var(--muted);margin-bottom:14px">MENÜ</p><h2 class="h2 up">NE İÇİYORUZ?</h2></div>
+<div class="tabs up" role="tablist" aria-label="Menü kategorisi" id="tabs"></div></div>
+<div class="menu">
+<div class="mlist" id="mlist" role="tabpanel" aria-live="polite"></div>
+<div class="mphoto" aria-hidden="true"><div class="circle" id="mph"></div><p id="mcap"></p></div>
+</div>
+</section>
+
+<section class="wrap" id="kavurmahane" style="padding-bottom:clamp(100px,10vw,140px)">
+<div class="head-row"><div><p class="eyebrow up" style="color:var(--muted);margin-bottom:14px">KAVURMAHANE</p><h2 class="h2 up">KAPININ HEMEN<br>ARKASINDA <em>KAVRULUR</em></h2></div><p class="sub up">Her salı ve cuma, dükkânın arkasındaki makinede küçük partiler halinde kavuruyoruz. İçeri girdiğinde o kokuyu alırsın.</p></div>
+<div class="roast">
+<img class="big" src="img/roaster.webp" width="1344" height="896" loading="lazy" alt="Kavurma makinesinden soğutma tepsisine dökülen çekirdekler">
+<span class="stamp">SALI · CUMA</span>
+<img class="disc circle" src="img/drum.webp" width="1344" height="896" loading="lazy" alt="Soğutma tamburunda dönen kavrulmuş çekirdekler">
+</div>
+</section>
+
+<section id="surec" style="padding:clamp(96px,10vw,130px) 0;background:var(--paper)">
+<div class="wrap proc">
+<div>
+<p class="eyebrow up" style="color:var(--muted);margin-bottom:14px">SÜREÇ</p>
+<h2 class="h2 up">ÇEKİRDEKTEN<br>FİNCANA</h2>
+<div class="plist" id="plist">
+<div class="pi on"><h3>Seçim</h3><p>Çiftlik ve işleme yöntemini bildiğimiz yeşil çekirdekleri tadarak seçeriz.</p></div>
+<div class="pi"><h3>Kavurma</h3><p>Her çekirdeğe göre ayrı profil; küçük partiler, her seferinde not tutarak.</p></div>
+<div class="pi"><h3>Dinlendirme</h3><p>Kavrulan kahve birkaç gün dinlenir; tatlar oturur, sonra bara çıkar.</p></div>
+<div class="pi"><h3>Demleme</h3><p>Gramı, suyu ve süresi ölçülerek; sana en çok yakışan yöntemle.</p></div>
+</div>
+</div>
+<div class="pwrap"><span class="pring" aria-hidden="true"></span>
+<div class="pstack circle" id="pstack">
+<img class="on" src="img/latte.webp" loading="lazy" style="object-position:50% 85%" alt="Kavrulmuş kahve çekirdekleri">
+<img src="img/roaster.webp" loading="lazy" style="object-position:40% 50%" alt="Kavurma makinesi">
+<img src="img/drum.webp" loading="lazy" alt="Dinlenen çekirdekler">
+<img src="img/cold.webp" loading="lazy" style="object-position:50% 45%" alt="Chemex demleme">
+</div></div>
+</div>
+</section>
+
+<section class="wrap sec" id="cekirdek">
+<p class="eyebrow up" style="color:var(--muted);margin-bottom:14px">PAKET KAHVE</p>
+<h2 class="h2 up">EVİNE GÖTÜR</h2>
+<p class="sub up">250 gramlık paketler; istediğin demleme yöntemine göre öğütürüz. WhatsApp'tan sipariş ver, gel al ya da kapına gelsin.</p>
+<div class="beans" id="beans"></div>
+<p class="note">Örnek içerik: marka adı, çekirdekler, fiyatlar, saatler ve adres temsilidir. Fotoğraflar Unsplash lisanslıdır; yayından önce dükkânın kendi fotoğraflarıyla değiştirilmesi önerilir.</p>
+</section>
+</main>
+
+<footer id="iletisim">
+<div class="fgrid">
+<div class="finfo">
+<h2 class="h2 up">UĞRA, BİR FİNCAN <em>İÇELİM</em></h2>
+<div class="up"><p class="eyebrow">ADRES</p><p class="v" id="addrText">Bahçelievler Mah. Ihlamur Sok. No: 8</p></div>
+<div class="up"><p class="eyebrow">TELEFON</p><p class="v"><a id="telText" href="#">0 500 000 00 00</a></p></div>
+<div class="up"><p class="eyebrow">SAATLER</p><div class="hours"><span>Hafta içi</span><span>07:30–20:00</span><span>Hafta sonu</span><span>09:00–21:00</span></div></div>
+<div class="up" style="display:flex;flex-wrap:wrap;gap:10px"><button class="btn btn-crema js-order" type="button">Kahve sipariş et</button><a class="btn btn-ghost" id="dirLink" href="#" target="_blank" rel="noopener">Yol tarifi al</a></div>
+</div>
+<div class="map circle up" id="map"><img src="img/interior.webp" loading="lazy" alt="" style="object-position:50% 70%"><button class="btn" id="loadMap" type="button">Haritayı göster</button></div>
+</div>
+<p class="fword" aria-hidden="true"><span>h</span><span>a</span><span>r</span><span>m</span><span>a</span><span>n</span></p>
+<div class="frow"><span>© <span id="yr">2026</span> Harman Kahve ve Kavurmahane</span><span>Instagram @harman.kahve</span></div>
+</footer>
+
+<a class="wa js-wa" id="waFloat" href="#" aria-label="WhatsApp'tan yaz"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.2-.3-.2-.5-.3Z"/></svg><span>WhatsApp'tan yaz</span></a>
+
+<div class="bk" id="bk" role="dialog" aria-modal="true" aria-labelledby="bkTitle">
+<div class="sheet">
+<div class="sh-top">
+<div class="sh-bar"><button class="icon-btn" id="bkBack" type="button" aria-label="Önceki adım"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button><span id="bkStep" style="font-size:14px;color:var(--muted)">Adım 1 / 4</span><button class="icon-btn" id="bkClose" type="button" aria-label="Kapat"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+<div class="prog" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+</div>
+<div class="sh-body" id="bkBody"></div>
+<div class="sh-foot" id="bkFoot"></div>
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+{
+/* === Dükkân bilgileri: yayından önce yalnızca burayı değiştir === */
+const CONFIG = {
+  whatsapp: '900000000000',
+  phoneText: '0 500 000 00 00',
+  address: 'Bahçelievler Mah. Ihlamur Sok. No: 8',
+  mapQuery: 'Bahçelievler Mah. Ihlamur Sok. No: 8',
+  shop: 'Harman Kahve',
+  delivery: 'Aynı gün teslimat: mahalle içi, 16:00\'ya kadar verilen siparişlerde'
+};
+const MENU = [
+  { tab: 'Espresso bazlı', img: 'img/espresso.webp', pos: '50% 40%', cap: 'Ev harmanı espresso · çikolata, fındık', items: [['Espresso', 'Ev harmanı, çift shot', 75], ['Cortado', 'Eşit espresso ve ılık süt', 95], ['Flat White', 'İnce mikro köpük, yoğun gövde', 110], ['Latte', 'Yumuşak, sütlü, isteğe göre yulaf', 115]] },
+  { tab: 'Demleme', img: 'img/cold.webp', pos: '50% 45%', cap: 'Haftanın tek kökenli çekirdeği', items: [['V60', 'Tek kökenli, açık ve meyvemsi', 120], ['Chemex', 'İki kişilik, temiz ve berrak', 190], ['Aeropress', 'Yoğun, yuvarlak gövde', 115], ['Günün filtresi', 'Termostan, hızlı ve sıcak', 80]] },
+  { tab: 'Soğuk', img: 'img/latte.webp', pos: '50% 25%', cap: 'Yaz boyunca buz üstünde', items: [['Cold Brew', '18 saat soğuk demleme', 120], ['Iced Latte', 'Espresso, süt, buz', 120], ['Espresso Tonic', 'Tonik, buz ve portakal kabuğu', 130]] },
+  { tab: 'Yanında', img: 'img/interior.webp', pos: '50% 70%', cap: 'Her sabah taze, komşu fırından', items: [['Tereyağlı kruvasan', 'Komşu fırından, sabah taze', 95], ['Muzlu ekmek', 'Dilim, tereyağı ile', 85], ['Bademli kurabiye', 'Ev yapımı', 45]] }
+];
+const BEANS = [
+  { id: 'etiyopya', name: 'Etiyopya Yirgacheffe', origin: 'TEK KÖKEN · YIKANMIŞ', notes: 'Yasemin, bergamot, şeftali', price: 420, img: 'img/drum.webp' },
+  { id: 'harman', name: 'Ev harmanı', origin: 'EN ÇOK SATAN · ESPRESSO', notes: 'Bitter çikolata, fındık, karamel', price: 340, img: 'img/latte.webp' },
+  { id: 'kolombiya', name: 'Kolombiya Huila', origin: 'TEK KÖKEN · YIKANMIŞ', notes: 'Kırmızı elma, panela, kakao', price: 380, img: 'img/roaster.webp' }
+];
+const GRINDS = ['Çekirdek', 'Espresso', 'Moka pot', 'V60 / filtre', 'French press', 'Türk kahvesi'];
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const tl = n => n.toLocaleString('tr-TR') + ' ₺';
+const up = s => s.toLocaleUpperCase('tr-TR');
+const wa = text => 'https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent(text);
+
+$$('.js-wa').forEach(a => { a.href = wa('Merhaba, ' + CONFIG.shop + ' hakkında bilgi almak istiyorum.'); a.target = '_blank'; a.rel = 'noopener'; });
+$('.hero .js-wa').href = 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(CONFIG.mapQuery);
+$('#telText').textContent = CONFIG.phoneText; $('#telText').href = 'tel:+' + CONFIG.whatsapp;
+$('#addrText').textContent = CONFIG.address;
+$('#dirLink').href = 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(CONFIG.mapQuery);
+$('#yr').textContent = new Date().getFullYear();
+$('#loadMap').addEventListener('click', () => {
+  const f = document.createElement('iframe');
+  f.title = 'Dükkân konumu'; f.loading = 'lazy'; f.referrerPolicy = 'no-referrer-when-downgrade';
+  f.src = 'https://www.google.com/maps?q=' + encodeURIComponent(CONFIG.mapQuery) + '&output=embed';
+  $('#map').append(f); $('#loadMap').remove();
+});
+
+/* menü ve başlık */
+const hdr = $('#hdr'), mb = $('#menuBtn'), waF = $('#waFloat');
+const setMenu = o => { hdr.classList.toggle('open', o); mb.setAttribute('aria-expanded', o); mb.setAttribute('aria-label', o ? 'Menüyü kapat' : 'Menüyü aç'); };
+mb.addEventListener('click', () => setMenu(!hdr.classList.contains('open')));
+$$('#links a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+const onScroll = () => { const y = scrollY, h = $('.hero').offsetHeight; hdr.classList.toggle('solid', y > h - 90); waF.classList.toggle('show', y > h * .8); };
+addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+/* menü sekmeleri */
+let cur = 0;
+$('#mph').innerHTML = MENU.map((m, i) => `<img src="${m.img}" alt="" loading="lazy" style="object-position:${m.pos}" class="${i === 0 ? 'on' : ''}">`).join('');
+function renderMenu() {
+  $('#tabs').innerHTML = MENU.map((m, i) => `<button type="button" role="tab" id="mt${i}" aria-selected="${i === cur}" tabindex="${i === cur ? 0 : -1}">${m.tab}</button>`).join('');
+  $('#mlist').setAttribute('aria-labelledby', 'mt' + cur);
+  $('#mlist').innerHTML = MENU[cur].items.map(([n, d, p]) => `<div class="mrow"><h3>${esc(n)}</h3><p>${esc(d)}</p><span class="pr">${tl(p)}</span></div>`).join('');
+  $$('#mph img').forEach((im, i) => im.classList.toggle('on', i === cur));
+  $('#mcap').textContent = MENU[cur].cap;
+  if (window.gsap && !reduce) gsap.from('#mlist .mrow', { y: 18, opacity: 0, duration: .6, ease: 'expo.out', stagger: .05 });
+}
+$('#tabs').addEventListener('click', e => { const b = e.target.closest('[role=tab]'); if (!b) return; cur = +b.id.slice(2); renderMenu(); $('#mt' + cur).focus(); });
+$('#tabs').addEventListener('keydown', e => { if (!['ArrowLeft', 'ArrowRight'].includes(e.key)) return; cur = (cur + (e.key === 'ArrowRight' ? 1 : MENU.length - 1)) % MENU.length; renderMenu(); $('#mt' + cur).focus(); });
+$$('.bento .tile').forEach(t => t.addEventListener('click', () => { cur = +t.dataset.tab; renderMenu(); }));
+
+/* paket kahve satırları */
+$('#beans').innerHTML = `
+<div class="row s7"><div><p class="eyebrow">${BEANS[0].origin}</p><h3>${BEANS[0].name}</h3><p class="notes">${BEANS[0].notes}</p></div><div class="r"><p class="amt">${tl(BEANS[0].price)}</p><button class="btn btn-dark js-order" type="button" data-bean="etiyopya">Sipariş</button></div></div>
+<img class="bimg s5" src="img/bar.webp" loading="lazy" style="object-position:50% 80%" alt="">
+<img class="bimg s4" src="img/drum.webp" loading="lazy" style="object-position:50% 60%" alt="">
+<div class="row dark s8"><div><p class="eyebrow">${BEANS[1].origin}</p><h3>${BEANS[1].name}</h3><p class="notes">${BEANS[1].notes}</p></div><div class="r"><p class="amt">${tl(BEANS[1].price)}</p><button class="btn btn-crema js-order" type="button" data-bean="harman">Sipariş</button></div></div>
+<div class="row light s8"><div><p class="eyebrow">${BEANS[2].origin}</p><h3>${BEANS[2].name}</h3><p class="notes">${BEANS[2].notes}</p></div><div class="r"><p class="amt">${tl(BEANS[2].price)}</p><button class="btn btn-dark js-order" type="button" data-bean="kolombiya">Sipariş</button></div></div>
+<img class="bimg s4" src="img/roaster.webp" loading="lazy" style="object-position:50% 70%" alt="">`;
+
+/* sipariş paneli */
+const bk = $('#bk'), body = $('#bkBody'), foot = $('#bkFoot');
+let S, lastFocus;
+const byId = id => BEANS.find(b => b.id === id);
+function openOrder(pre = {}) {
+  S = { step: pre.bean ? 2 : 1, bean: pre.bean || null, grind: null, qty: 1, how: 'Gel al', name: '', phone: '', addr: '', tried: false };
+  lastFocus = document.activeElement; bk.classList.add('open'); document.documentElement.style.overflow = 'hidden'; if (window.__lenis) __lenis.stop();
+  draw(); setTimeout(() => $('#bkClose').focus(), 30);
+}
+function closeOrder() { bk.classList.remove('open'); document.documentElement.style.overflow = ''; if (window.__lenis) __lenis.start(); if (lastFocus) lastFocus.focus(); }
+const nOk = () => S.name.trim().length > 1, pOk = () => /^\d{10,12}$/.test(S.phone.replace(/\D/g, '')), aOk = () => S.how !== 'Kapıma gelsin' || S.addr.trim().length > 8;
+function msg() { const b = byId(S.bean); return `Merhaba, ben ${S.name.trim()}. Paket kahve siparişi vermek istiyorum:\n${S.qty} × ${b.name} (250 g) · Öğütme: ${S.grind}\nTeslimat: ${S.how}` + (S.how === 'Kapıma gelsin' ? '\nAdres: ' + S.addr.trim() : '') + `\nToplam: ${tl(b.price * S.qty)}\nTelefon: ${S.phone.trim()}`; }
+function draw() {
+  $('#bkStep').textContent = `Adım ${S.step} / 4`;
+  $$('.prog i').forEach((b, i) => b.classList.toggle('on', i < S.step));
+  $('#bkBack').style.visibility = S.step > 1 ? 'visible' : 'hidden';
+  const b = byId(S.bean);
+  if (S.step === 1) {
+    body.innerHTML = `<h2 id="bkTitle">Hangi çekirdek?</h2><p class="sub">Espresso yapıyorsan ev harmanı; filtre için tek kökenler.</p><div role="radiogroup" aria-label="Çekirdek">` + BEANS.map(k => `<button type="button" class="opt" role="radio" aria-checked="${k.id === S.bean}" data-id="${k.id}"><img src="${k.img}" alt=""><span><b>${k.name}</b><small>${k.notes}</small></span><span class="p">${tl(k.price)}</span></button>`).join('') + `</div>`;
+    foot.innerHTML = `<button class="btn btn-dark" id="bkNext" type="button" ${S.bean ? '' : 'disabled'}>${S.bean ? 'Devam et' : 'Bir çekirdek seç'}</button>`;
+  } else if (S.step === 2) {
+    body.innerHTML = `<h2 id="bkTitle">Nasıl demliyorsun?</h2><p class="sub">${esc(b.name)} · 250 g. Öğütmeyi yöntemine göre yaparız.</p><div class="chips" role="radiogroup" aria-label="Öğütme">` + GRINDS.map(g => `<button type="button" class="chip" role="radio" aria-checked="${g === S.grind}" data-g="${g}">${g}</button>`).join('') + `</div>
+<span class="lbl" id="qtyL">Adet</span><div class="qty" role="group" aria-labelledby="qtyL"><button type="button" id="qm" aria-label="Azalt">−</button><output id="qv" aria-live="polite">${S.qty}</output><button type="button" id="qp" aria-label="Artır">+</button><span style="margin-left:auto;font:700 28px var(--disp)">${tl(b.price * S.qty)}</span></div>`;
+    foot.innerHTML = `<button class="btn btn-dark" id="bkNext" type="button" ${S.grind ? '' : 'disabled'}>${S.grind ? 'Devam et' : 'Öğütmeyi seç'}</button>`;
+    $('#qm').onclick = () => { S.qty = Math.max(1, S.qty - 1); draw(); $('#qm').focus(); };
+    $('#qp').onclick = () => { S.qty = Math.min(10, S.qty + 1); draw(); $('#qp').focus(); };
+  } else if (S.step === 3) {
+    const t = S.tried;
+    body.innerHTML = `<h2 id="bkTitle">Nasıl ulaşsın?</h2><p class="sub">${esc(CONFIG.delivery)}.</p>
+<div class="chips" role="radiogroup" aria-label="Teslimat" style="margin-bottom:20px">${['Gel al', 'Kapıma gelsin'].map(h => `<button type="button" class="chip" role="radio" aria-checked="${h === S.how}" data-how="${h}">${h}</button>`).join('')}</div>
+<label class="fld">Adın<input id="fName" autocomplete="given-name" value="${esc(S.name)}" placeholder="Örn. Elif…" aria-invalid="${t && !nOk()}">${t && !nOk() ? '<span class="err">Adını yazar mısın?</span>' : ''}</label>
+<label class="fld">Telefon<input id="fPhone" type="tel" inputmode="tel" autocomplete="tel" value="${esc(S.phone)}" placeholder="0532 123 45 67" aria-invalid="${t && !pOk()}">${t && !pOk() ? '<span class="err">Numaranı 10 hane olarak yaz: 0532 123 45 67</span>' : ''}</label>
+${S.how === 'Kapıma gelsin' ? `<label class="fld">Adres<textarea id="fAddr" rows="2" autocomplete="street-address" placeholder="Mahalle, sokak, bina ve daire…" aria-invalid="${t && !aOk()}">${esc(S.addr)}</textarea>${t && !aOk() ? '<span class="err">Teslimat için açık adresini yaz.</span>' : ''}</label>` : ''}`;
+    foot.innerHTML = `<button class="btn btn-dark" id="bkNext" type="button">Özeti gör</button>`;
+    $('#fName').oninput = e => S.name = e.target.value; $('#fPhone').oninput = e => S.phone = e.target.value;
+    if ($('#fAddr')) $('#fAddr').oninput = e => S.addr = e.target.value;
+    if (t) (!nOk() ? $('#fName') : !pOk() ? $('#fPhone') : $('#fAddr')).focus();
+  } else {
+    body.innerHTML = `<h2 id="bkTitle">Neredeyse hazır</h2><p class="sub">Mesajı WhatsApp'ta sen gönderirsin, dükkân siparişini onaylar.</p><div class="sum"><img src="${b.img}" alt=""><div><b>${S.qty} × ${esc(b.name)}</b><span>250 g · ${esc(S.grind)} · ${esc(S.how)}</span><span>${tl(b.price * S.qty)}</span></div></div><p class="lbl" style="margin-bottom:0">Gönderilecek mesaj</p><div class="msg">${esc(msg())}</div>`;
+    foot.innerHTML = `<a class="btn wa-btn" href="${wa(msg())}" target="_blank" rel="noopener">WhatsApp'ta gönder</a>`;
+  }
+}
+body.addEventListener('click', e => {
+  const o = e.target.closest('.opt'); if (o) { S.bean = o.dataset.id; return draw(); }
+  const g = e.target.closest('[data-g]'); if (g) { S.grind = g.dataset.g; return draw(); }
+  const h = e.target.closest('[data-how]'); if (h) { S.how = h.dataset.how; return draw(); }
+});
+foot.addEventListener('click', e => {
+  if (!e.target.closest('#bkNext')) return;
+  if (S.step === 3 && !(nOk() && pOk() && aOk())) { S.tried = true; return draw(); }
+  S.step++; S.tried = false; draw(); $('#bkTitle').setAttribute('tabindex', '-1'); $('#bkTitle').focus();
+});
+$('#bkBack').onclick = () => { if (S.step > 1) { S.step--; draw(); } };
+$('#bkClose').onclick = closeOrder;
+bk.addEventListener('click', e => { if (e.target === bk) closeOrder(); });
+document.addEventListener('keydown', e => {
+  if (!bk.classList.contains('open')) return;
+  if (e.key === 'Escape') closeOrder();
+  if (e.key === 'Tab') { const f = [...bk.querySelectorAll('button:not([disabled]),a[href],input,textarea')].filter(x => x.offsetParent); if (!f.length) return; const a = f[0], z = f[f.length - 1]; if (e.shiftKey && document.activeElement === a) { e.preventDefault(); z.focus(); } else if (!e.shiftKey && document.activeElement === z) { e.preventDefault(); a.focus(); } }
+});
+document.addEventListener('click', e => { const b = e.target.closest('.js-order'); if (!b) return; e.preventDefault(); setMenu(false); openOrder({ bean: b.dataset.bean }); });
+
+/* hareket */
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+renderMenu();
+const words = $$('#mani .w');
+if (reduce || !window.gsap || !window.ScrollTrigger) { words.forEach(w => w.classList.add('on')); }
+else {
+  gsap.registerPlugin(ScrollTrigger);
+  if (window.Lenis) { const l = new Lenis({ duration: 1.15 }); window.__lenis = l; l.on('scroll', ScrollTrigger.update); gsap.ticker.add(t => l.raf(t * 1000)); gsap.ticker.lagSmoothing(0);
+    $$('a[href^="#"]').forEach(a => a.addEventListener('click', e => { const id = a.getAttribute('href'); if (id.length > 1 && $(id)) { e.preventDefault(); l.scrollTo(id, { offset: -84 }); } })); }
+  /* hero */
+  gsap.from('.word span', { yPercent: 105, duration: 1.4, ease: 'expo.out', stagger: .06, delay: .15 });
+  gsap.from('.hero-labels span, .hi', { opacity: 0, y: 16, duration: 1.1, ease: 'expo.out', stagger: .1, delay: .55 });
+  gsap.fromTo('.hero .ph', { scale: 1.16 }, { scale: 1, duration: 2.6, ease: 'expo.out' });
+  gsap.to('.hero .ph', { yPercent: 12, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+  gsap.to('.word', { yPercent: -16, opacity: .25, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+  /* başlıklar */
+  const ups = gsap.utils.toArray('.up'); gsap.set(ups, { y: 40, opacity: 0 });
+  ScrollTrigger.batch(ups, { start: 'top 90%', once: true, onEnter: els => gsap.to(els, { y: 0, opacity: 1, duration: 1.1, ease: 'expo.out', stagger: .08, overwrite: true }) });
+  /* bento: kareler daire gibi açılır */
+  gsap.set('.tile', { clipPath: 'circle(0% at 50% 50%)' });
+  ScrollTrigger.batch('.tile', { start: 'top 88%', once: true, onEnter: els => gsap.to(els, { clipPath: 'circle(75% at 50% 50%)', duration: 1.4, ease: 'expo.inOut', stagger: .12, onComplete() { els.forEach(el => el.style.clipPath = ''); } }) });
+  /* manifesto */
+  ScrollTrigger.create({ trigger: '#mani', start: 'top 80%', end: 'bottom 45%', scrub: true, onUpdate: s => { const n = Math.round(s.progress * words.length); words.forEach((w, i) => w.classList.toggle('on', i < n)); } });
+  gsap.from('.pill', { width: 0, marginLeft: 0, marginRight: 0, duration: 1.2, ease: 'expo.out', scrollTrigger: { trigger: '#mani', start: 'top 70%' } });
+  /* kavurmahane: büyük fotoğraf açılır, tambur döner ve yükselir */
+  gsap.from('.roast .big', { clipPath: 'inset(0% 100% 0% 0% round 36px)', duration: 1.6, ease: 'expo.inOut', scrollTrigger: { trigger: '.roast', start: 'top 80%' } });
+  gsap.fromTo('.roast .disc', { yPercent: 30, rotate: -40 }, { yPercent: -10, rotate: 20, ease: 'none', scrollTrigger: { trigger: '.roast', start: 'top bottom', end: 'bottom top', scrub: true } });
+  gsap.to('.pring', { rotate: 360, ease: 'none', scrollTrigger: { trigger: '#surec', start: 'top bottom', end: 'bottom top', scrub: true } });
+  /* süreç: masaüstünde bölüm sabitlenir */
+  const pis = $$('.pi'), pims = $$('#pstack img');
+  const setP = i => { pis.forEach((p, k) => p.classList.toggle('on', k === i)); pims.forEach((m, k) => m.classList.toggle('on', k === i)); };
+  const mm = gsap.matchMedia();
+  mm.add('(min-width: 1001px)', () => { ScrollTrigger.create({ trigger: '#surec', start: 'top top', end: '+=' + innerHeight * 2.2, pin: true, scrub: true, onUpdate: s => setP(Math.min(pis.length - 1, Math.floor(s.progress * pis.length))) }); });
+  mm.add('(max-width: 1000px)', () => { pis.forEach((p, i) => ScrollTrigger.create({ trigger: p, start: 'top 70%', onEnter: () => setP(i), onEnterBack: () => setP(i) })); });
+  /* paket kahve satırları iki yandan */
+  $$('#beans > *').forEach((el, i) => gsap.from(el, { x: (i % 2 ? 1 : -1) * Math.min(60, innerWidth * .06), opacity: 0, duration: 1.2, ease: 'expo.out', scrollTrigger: { trigger: el, start: 'top 92%' } }));
+  /* altbilgi */
+  gsap.from('.fword span', { yPercent: 100, duration: 1.3, ease: 'expo.out', stagger: .05, scrollTrigger: { trigger: '.fword', start: 'top 95%' } });
+  addEventListener('load', () => ScrollTrigger.refresh());
+}
+}
+</script>
+</body>
+</html>
